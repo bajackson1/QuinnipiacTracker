@@ -1,6 +1,6 @@
 # Quinnipiac Tracker
 
-An Android app to track where on Quinnipiac's Mount Carmel campus the user has been. The final project for the SER210 Android development class.
+An Android app for information and location journaling at Quinnipiac University. The final project for the SER210 Android development class.
 
 ## Credits
 
