@@ -13,4 +13,15 @@
         android:textSize="26sp"
         android:layout_gravity="center"/>
 
+    <ImageView
+        android:id="@+id/tator_click"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginStart="25dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:onClick="onImageViewClick"
+        android:src="@drawable/tator" />
+
 </FrameLayout>

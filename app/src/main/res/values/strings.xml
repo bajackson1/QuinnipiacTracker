@@ -16,4 +16,7 @@
     <string name="help_fragment">Help Fragment</string>
     <string name="quinnipiac_tracker">Quinnipiac Tracker</string>
     <string name="info_fragment">Info Fragment</string>
+    <string name="tator_info">This building connected to the Carl Hansen Student Center, which serves
+    as a hub for all types of classes with many labs, general classrooms, and offices for faculty
+    members.</string>
 </resources>

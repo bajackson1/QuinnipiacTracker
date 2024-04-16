@@ -5,6 +5,8 @@ import android.os.Bundle
 import androidx.fragment.app.Fragment
 import edu.quinnipiac.quinnipiactracker.databinding.ActivityMainBinding
 import android.content.res.ColorStateList
+import android.view.View
+import android.widget.ImageView
 
 class MainActivity : AppCompatActivity() {
 
@@ -85,4 +87,13 @@ class MainActivity : AppCompatActivity() {
         fragmentTransaction.replace(R.id.frame_layout, fragment)
         fragmentTransaction.commit()
     }
+
+    fun onImageClick(view: View) {
+        // Navigate to the detail fragment
+        val tatorFragment = TatorFragment()
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.frame_layout, tatorFragment)
+            .commit()
+    }
+
 }
