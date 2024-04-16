@@ -1,46 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    android:orientation="vertical"
     tools:context=".FavsFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:padding="4dp">
+        android:orientation="vertical">
 
-        <Button
-            android:id="@+id/back_button"
-            style="?attr/borderlessButtonStyle"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/back"
-            android:textColor="@color/QUblue"/>
+            android:orientation="horizontal"
+            android:padding="4dp">
+
+            <Button
+                android:id="@+id/back_button"
+                style="?attr/borderlessButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/back"
+                android:textColor="@color/QUblue" />
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/tator_image"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_margin="4dp"
+            android:contentDescription="@string/todo"
+            android:scaleType="centerCrop"
+            android:src="@drawable/tator" />
+
+        <TextView
+            android:id="@+id/tator_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:background="@drawable/box_outline"
+            android:padding="16dp"
+            android:text="@string/tator_description"
+            android:textColor="@color/QUnavy"
+            android:textSize="16sp" />
 
     </LinearLayout>
 
-    <ImageView
-        android:id="@+id/tator_image"
-        android:layout_width="match_parent"
-        android:layout_height="300dp"
-        android:layout_margin="4dp"
-        android:scaleType="centerCrop"
-        android:src="@drawable/tator"
-        android:contentDescription="@string/todo"/>
-
-    <TextView
-        android:id="@+id/tator_description"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="4dp"
-        android:background="@drawable/box_outline"
-        android:padding="16dp"
-        android:text="@string/tator_description"
-        android:textColor="@color/QUnavy"
-        android:textSize="16sp" />
-
-</LinearLayout>
+</ScrollView>
