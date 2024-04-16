@@ -1,99 +1,23 @@
 package edu.quinnipiac.quinnipiactracker
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.fragment.app.Fragment
-import edu.quinnipiac.quinnipiactracker.databinding.ActivityMainBinding
-import android.content.res.ColorStateList
-import android.view.View
-import android.widget.ImageView
+import androidx.appcompat.app.AppCompatActivity
+import androidx.navigation.NavController
+import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.NavigationUI.setupWithNavController
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
 
-    // Declaring variable for view binding
-    private lateinit var binding: ActivityMainBinding
+    private lateinit var navController: NavController
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
 
-        // Setting activity_main to content view
-        binding = ActivityMainBinding.inflate(layoutInflater)
-        setContentView(binding.root)
-
-        // Switching to HomeFragment (home screen)
-        replaceFragment(HomeFragment())
-
-        // Setting navigation bar icon color to null
-        binding.bottomNavigationView.itemIconTintList = null
-
-        // Making navigation bar Quinnipiac yellow color
-        binding.bottomNavigationView.setBackgroundColor(resources.getColor(R.color.QUyellow, theme))
-
-        // Setting state colors for navigation bar icons
-        val iconColors = intArrayOf(
-            resources.getColor(R.color.QUblue, theme),
-            resources.getColor(R.color.QUblue, theme),
-            resources.getColor(R.color.QUnavy, theme)
-        )
-
-        // Define the states for the color state list
-        val iconStates = arrayOf(
-            intArrayOf(android.R.attr.state_checked),
-            intArrayOf(android.R.attr.state_pressed),
-            intArrayOf()
-        )
-
-        // Creating icon and text color list for navigation bar
-        val iconColorList = ColorStateList(iconStates, iconColors)
-
-        // Setting icon and text color list for navigation bar
-        binding.bottomNavigationView.itemIconTintList = iconColorList
-        binding.bottomNavigationView.itemTextColor = iconColorList
-
-        // Handling icon presses and screen switches
-        binding.bottomNavigationView.setOnItemSelectedListener {
-            when (it.itemId) {
-                R.id.home -> {
-                    // Switches to Home screen
-                    replaceFragment(HomeFragment())
-                    binding.bottomNavigationView.menu.findItem(R.id.home).isChecked = true
-                }
-                R.id.info -> {
-                    // Switches to Info screen
-                    replaceFragment(InfoFragment())
-                    binding.bottomNavigationView.menu.findItem(R.id.info).isChecked = true
-                }
-                R.id.faves -> {
-                    // Switches to Favs screen
-                    replaceFragment(FavesFragment())
-                    binding.bottomNavigationView.menu.findItem(R.id.faves).isChecked = true
-                }
-                R.id.help -> {
-                    // Switches to Help screen
-                    replaceFragment(HelpFragment())
-                    binding.bottomNavigationView.menu.findItem(R.id.help).isChecked = true
-                }
-                else -> {
-                }
-            }
-            true
-        }
+        val navHostFragment = supportFragmentManager.findFragmentById(R.id.mainContainer) as NavHostFragment
+        navController = navHostFragment.navController
+        val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottomNavigationView)
+        setupWithNavController(bottomNavigationView, navController)
     }
-
-    // Replaces the frame_layout with given fragment
-    private fun replaceFragment(fragment: Fragment) {
-        val fragmentManager = supportFragmentManager
-        val fragmentTransaction = fragmentManager.beginTransaction()
-        fragmentTransaction.replace(R.id.frame_layout, fragment)
-        fragmentTransaction.commit()
-    }
-
-    fun onImageClick(view: View) {
-        // Navigate to the detail fragment
-        val tatorFragment = TatorFragment()
-        supportFragmentManager.beginTransaction()
-            .replace(R.id.frame_layout, tatorFragment)
-            .commit()
-    }
-
 }

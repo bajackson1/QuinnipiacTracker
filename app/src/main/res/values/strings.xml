@@ -3,7 +3,7 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="home">Home</string>
     <string name="info">Info</string>
-    <string name="faves">Faves</string>
+    <string name="favs">Favs</string>
     <string name="help">Help</string>
     <string name="API">AIzaSyAb1qAIWdXfQCJte2oPiieFtqWfVZiv9PY</string>
     <string name="FillerNumbers">##</string>
@@ -12,11 +12,15 @@
     <string name="my_dining_halls">My Dining Halls</string>
     <string name="academic_buildings_title">ACADEMIC BUILDINGS</string>
     <string name="todo">TODO</string>
-    <string name="faves_fragment">Faves Fragment</string>
+    <string name="favs_fragment">Favs Fragment</string>
     <string name="help_fragment">Help Fragment</string>
     <string name="quinnipiac_tracker">Quinnipiac Tracker</string>
-    <string name="info_fragment">Info Fragment</string>
-    <string name="tator_info">This building connected to the Carl Hansen Student Center, which serves
-    as a hub for all types of classes with many labs, general classrooms, and offices for faculty
-    members.</string>
+    <string name="cas_fragment">CAS Fragment</string>
+    <string name="_6">6</string>
+    <string name="cce_fragment">CCE Fragment</string>
+    <string name="echlin_fragment">Echlin Fragment</string>
+    <string name="lender_fragment">Lender Fragment</string>
+    <string name="library_fragment">Library Fragment</string>
+    <string name="tator_fragment">Tator Fragment</string>
+    <string name="back">Back</string>
 </resources>

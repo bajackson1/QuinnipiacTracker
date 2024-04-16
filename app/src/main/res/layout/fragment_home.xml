@@ -13,13 +13,13 @@
         android:name="com.google.android.gms.maps.SupportMapFragment"
         android:layout_width="match_parent"
         android:layout_height="300dp"
-        android:layout_marginTop="16dp"/>
+        android:layout_margin="4dp"/>
 
     <!-- Grouping the three user data boxes together -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="320dp"
+        android:layout_marginTop="308dp"
         android:layout_marginHorizontal="4dp"
         android:orientation="vertical">
 
