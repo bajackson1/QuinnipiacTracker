@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">QuinnipiacTracker</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="home">Home</string>
+    <string name="info">Info</string>
+    <string name="faves">Faves</string>
+    <string name="help">Help</string>
+    <string name="API">AIzaSyAb1qAIWdXfQCJte2oPiieFtqWfVZiv9PY</string>
+    <string name="FillerNumbers">##</string>
+    <string name="my_buildings">My Buildings</string>
+    <string name="my_residence_halls">My Residence Halls</string>
+    <string name="my_dining_halls">My Dining Halls</string>
+    <string name="academic_buildings_title">ACADEMIC BUILDINGS</string>
+    <string name="todo">TODO</string>
+    <string name="faves_fragment">Faves Fragment</string>
+    <string name="help_fragment">Help Fragment</string>
+    <string name="quinnipiac_tracker">Quinnipiac Tracker</string>
+    <string name="info_fragment">Info Fragment</string>
+</resources>
