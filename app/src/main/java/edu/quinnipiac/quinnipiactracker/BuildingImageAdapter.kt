@@ -11,7 +11,9 @@ import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
 
 class BuildingImageAdapter(
+    // List of images to be displayed
     private val buildingImages: List<Int>,
+    // Click listeners for each building
     private val casClickListener: () -> Unit,
     private val cceClickListener: () -> Unit,
     private val echlinClickListener: () -> Unit,
@@ -20,20 +22,24 @@ class BuildingImageAdapter(
     private val tatorClickListener: () -> Unit
 ) : RecyclerView.Adapter<BuildingImageAdapter.ViewHolder>() {
 
+    // Represents a singular image in the view gallery
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val buildingImage: ImageView = itemView.findViewById(R.id.building_image)
     }
 
+    // Called when the adapter creates a new ViewHolder
+    // Inflates from the item_building_image.xml file
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context)
             .inflate(R.layout.item_building_image, parent, false)
         return ViewHolder(view)
     }
 
+    // Binding the image data to the view holder
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.buildingImage.setImageResource(buildingImages[position])
 
-        // Setting the click listener for each image
+        // Setting the click listener for each image based on its position in the view
         holder.buildingImage.setOnClickListener {
             when (position) {
                 0 -> casClickListener()
@@ -46,5 +52,6 @@ class BuildingImageAdapter(
         }
     }
 
+    // Returns the number of items in the view gallery
     override fun getItemCount() = buildingImages.size
 }

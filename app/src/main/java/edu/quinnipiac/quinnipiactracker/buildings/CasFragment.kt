@@ -15,8 +15,10 @@ class CasFragment : Fragment() {
     ): View? {
         val view = inflater.inflate(R.layout.fragment_cas, container, false)
 
+        // Setting back button
         val backButton = view.findViewById<Button>(R.id.back_button)
 
+        // Back button function
         backButton.setOnClickListener {
             requireActivity().onBackPressed()
         }

@@ -24,7 +24,7 @@
             android:text="@string/quinnipiac_tracker"
             android:textColor="@color/QUblue"
             android:textSize="20sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"/>
 
     </LinearLayout>
 

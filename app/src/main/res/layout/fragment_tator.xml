@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--Use fragment_caf as the template for all other building fragments-->
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context=".FavsFragment">
+    tools:context=".buildings.TatorFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -23,7 +24,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/back"
-                android:textColor="@color/QUblue" />
+                android:textColor="@color/QUblue"/>
 
         </LinearLayout>
 
@@ -34,7 +35,7 @@
             android:layout_margin="4dp"
             android:contentDescription="@string/todo"
             android:scaleType="centerCrop"
-            android:src="@drawable/tator" />
+            android:src="@drawable/tator"/>
 
         <TextView
             android:id="@+id/tator_description"
@@ -45,7 +46,7 @@
             android:padding="16dp"
             android:text="@string/tator_description"
             android:textColor="@color/QUnavy"
-            android:textSize="16sp" />
+            android:textSize="16sp"/>
 
     </LinearLayout>
 
