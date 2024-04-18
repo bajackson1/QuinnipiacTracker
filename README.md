@@ -18,6 +18,14 @@ Open the folder in Android Studio, build it, and run it on an emulator or a phys
 - Android SDK
 - An Android emulator or a physical Android device
 
+## Usage
+
+Upon launching the app, users will be greeted with the home screen where they will see the map of the Quinnipiac Campus and can navigate to the building information, favorite buildings, and help all from the action bar at the bottom of the screen.
+
+## [Documentation](https://bajackson1.github.io/documentation)
+
+You can find the documentation for this project and all of my other collaborative school projects at the website above.
+
 ## API Usage
 
 For the map display and entering in specific locations unique to Quinnipiac's campus, we used the [Maps SDK for Android](https://console.cloud.google.com/apis/library/maps-android-backend.googleapis.com?project=quinnipiactracker&supportedpurview=project). This is a Google Cloud API that is free to use with a Google account and has easy Kotlin integration for any Android app. In fact, this is what the "Google Maps Project" template in Android Studio uses. The documentation for setting it up can be found [here](https://developers.google.com/maps/documentation/android-sdk/start#android_mapsactivity-java).
