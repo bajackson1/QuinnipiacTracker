@@ -11,6 +11,7 @@
     <string name="my_residence_halls">My Residence Halls</string>
     <string name="my_dining_halls">My Dining Halls</string>
     <string name="academic_buildings_title">ACADEMIC BUILDINGS</string>
+    <string name="favorite_academic_buildings">ACADEMIC BUILDING FAVORITES</string>
     <string name="todo">TODO</string>
     <string name="favs_fragment">Favs Fragment</string>
     <string name="help_fragment">Help Fragment</string>
