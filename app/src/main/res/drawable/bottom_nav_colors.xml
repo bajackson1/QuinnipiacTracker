@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--Initializing the colors for the bottom navigation bar to use based on if the icons-->
+<!--are focused or not-->
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:color="@color/QUblue" android:state_checked="true"/>
     <item android:color="@color/QUnavy" android:state_checked="false"/>

@@ -24,6 +24,7 @@
         android:orientation="vertical">
 
         <LinearLayout
+            android:id="@+id/building_group"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/box_outline"
@@ -40,6 +41,7 @@
                 android:textColor="@color/QUnavy"/>
 
             <TextView
+                android:id="@+id/building_count"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/FillerNumbers"

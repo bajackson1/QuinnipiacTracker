@@ -9,7 +9,7 @@
     <!--Making sure the title bar shows in all fragments-->
     <include
         android:id="@+id/app_bar"
-        layout="@layout/title_bar" />
+        layout="@layout/title_bar"/>
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/mainContainer"
@@ -21,7 +21,7 @@
         app:layout_constraintTop_toBottomOf="@id/app_bar"
         app:layout_constraintBottom_toTopOf="@id/bottomNavigationView"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"/>
 
     <!-- Navigation bar -->
     <com.google.android.material.bottomnavigation.BottomNavigationView

@@ -56,26 +56,32 @@ class InfoFragment : Fragment() {
         return view
     }
 
+    // Function for CAS navigation
     private fun navigateToCasFragment() {
         findNavController().navigate(R.id.action_infoFragment_to_casFragment)
     }
 
+    // Function for CCE navigation
     private fun navigateToCceFragment() {
         findNavController().navigate(R.id.action_infoFragment_to_cceFragment)
     }
 
+    // Function for Echlin navigation
     private fun navigateToEchlinFragment() {
         findNavController().navigate(R.id.action_infoFragment_to_echlinFragment)
     }
 
+    // Function for Lender navigation
     private fun navigateToLenderFragment() {
         findNavController().navigate(R.id.action_infoFragment_to_lenderFragment)
     }
 
+    // Function for library navigation
     private fun navigateToLibraryFragment() {
         findNavController().navigate(R.id.action_infoFragment_to_libraryFragment)
     }
 
+    // Function for Tator navigation
     private fun navigateToTatorFragment() {
         findNavController().navigate(R.id.action_infoFragment_to_tatorFragment)
     }

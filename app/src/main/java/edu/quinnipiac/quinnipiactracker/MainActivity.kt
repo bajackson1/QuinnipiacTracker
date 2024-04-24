@@ -9,15 +9,20 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
 
+    // Initializing NavController to navigate between fragments
     private lateinit var navController: NavController
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        // Setting original content to main activity xml
         setContentView(R.layout.activity_main)
 
+        // Getting the NavController instance from the layout
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.mainContainer) as NavHostFragment
         navController = navHostFragment.navController
+        // Getting the bottomNavigationView (bottom navigation bar) from the layout
         val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottomNavigationView)
+        // Getting the NavController and the bottomNavigationView to work together
         setupWithNavController(bottomNavigationView, navController)
     }
 }
