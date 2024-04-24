@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".lists.DiningAddFragment"
+        android:padding="12dp">
+
+        <TextView
+            android:id="@+id/addDiningHeading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="16dp"
+            android:text="@string/add_dining"
+            android:textColor="@color/QUblue"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/addDiningTitle"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:hint="@string/enter_the_title"
+            android:padding="12dp"
+            android:textSize="20sp"
+            android:layout_below="@id/addDiningHeading"
+            android:background="@drawable/blue_border"
+            android:layout_marginTop="16dp"
+            android:maxLines="1" />
+
+        <TextView
+            android:id="@+id/saveDiningName"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:padding="12dp"
+            android:textSize="20sp"
+            android:text="@string/save"
+            android:textColor="@color/white"
+            android:gravity="center"
+            android:layout_below="@id/addDiningTitle"
+            android:background="@drawable/blue_border"
+            android:backgroundTint="@color/QUblue"
+            android:layout_marginTop="16dp"
+            android:maxLines="1" />
+
+    </RelativeLayout>
+</layout>

@@ -30,4 +30,11 @@
     <string name="lender_description">The Lender School of Business is the go-to building for all Business, Finance, and Economics majors. It is home to many collaborative classrooms, reservable study rooms, and the Financial Technology Center. This room has multiple Bloomberg Terminals, a student-led portfolio, and multiple connecting study rooms, with multiple stock market tickers.</string>
     <string name="tator_description">This building, connected to the Carl Hansen Student Center, which serves as a hub for all types of classes with many labs, general classrooms, and offices for faculty members.</string>
     <string name="library_description">The Arnold Bernhard Library is Quinnipiac’s most iconic building on campus. Its infamous clock tower skies over the whole quad, and is the main centerpiece for graduations. This two-story building has multiple open spaces for studying for all students. It also has multiple reservable study rooms for more collaborative, or more silent, work. It is also home to the Registrar, Bursar, Learning Commons, Student Administrative Services, Information Services, and the Technology Center. It is mainly open from 8am-12am, but during midterms and finals week, the library stays open as late as 2am.</string>
+    <string name="add_building">Add Academic Building</string>
+    <string name="add_dining">Add Dining Hall</string>
+    <string name="add_residence">Add Residence Hall</string>
+    <string name="enter_the_title">Enter the title</string>
+    <string name="enter_the_description">Enter the description</string>
+    <string name="save">Save</string>
+    <string name="enter_a_building_name">Enter a building name</string>
 </resources>
