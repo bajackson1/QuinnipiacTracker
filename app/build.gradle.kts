@@ -97,6 +97,10 @@ dependencies {
     testImplementation("org.mockito:mockito-core:4.8.0")
     testImplementation("org.mockito:mockito-inline:4.8.0")
 
+    // Glide
+    implementation("com.github.bumptech.glide:glide:4.14.2")
+    annotationProcessor("com.github.bumptech.glide:compiler:4.14.2")
+
     // Added testing dependencies
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")

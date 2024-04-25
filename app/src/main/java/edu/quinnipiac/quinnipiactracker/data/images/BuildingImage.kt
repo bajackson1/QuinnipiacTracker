@@ -1,4 +1,7 @@
 package edu.quinnipiac.quinnipiactracker.data.images
 
-class BuildingImage {
-}
+data class BuildingImage(
+    val id: Int,
+    val imageUrl: String,
+    val title: String
+)

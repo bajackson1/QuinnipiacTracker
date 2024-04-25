@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import edu.quinnipiac.quinnipiactracker.R
+import edu.quinnipiac.quinnipiactracker.data.images.ResidenceImage
 import edu.quinnipiac.quinnipiactracker.data.images.SharedViewModel
 
 class DanaFragment : Fragment() {
@@ -35,7 +36,12 @@ class DanaFragment : Fragment() {
 
         // Favorite button function
         favoriteButton.setOnClickListener {
-            sharedViewModel.addFavoriteItem(R.drawable.commons)
+            val danaImage = ResidenceImage(
+                id = R.drawable.dana,
+                imageUrl = "https://example.com/dana.jpg",
+                title = "Dana Building"
+            )
+            sharedViewModel.addResidenceFav(danaImage)
         }
 
         return view

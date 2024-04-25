@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import edu.quinnipiac.quinnipiactracker.R
+import edu.quinnipiac.quinnipiactracker.data.images.DiningImage
 import edu.quinnipiac.quinnipiactracker.data.images.SharedViewModel
 
 class StudentCenterFragment : Fragment() {
@@ -35,7 +36,12 @@ class StudentCenterFragment : Fragment() {
 
         // Favorite button function
         favoriteButton.setOnClickListener {
-            sharedViewModel.addFavoriteItem(R.drawable.caf)
+            val cafImage = DiningImage(
+                id = R.drawable.caf,
+                imageUrl = "https://example.com/caf.jpg",
+                title = "Caf Building"
+            )
+            sharedViewModel.addDiningFav(cafImage)
         }
 
         return view

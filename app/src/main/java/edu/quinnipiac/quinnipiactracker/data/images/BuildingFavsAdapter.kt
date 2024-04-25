@@ -9,44 +9,42 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import edu.quinnipiac.quinnipiactracker.R
 
 class BuildingFavsAdapter(
-    private val buildingImages: List<Int>,
-    private val casClickListener: () -> Unit,
-    private val cceClickListener: () -> Unit,
-    private val echlinClickListener: () -> Unit,
-    private val lenderClickListener: () -> Unit,
-    private val libraryClickListener: () -> Unit,
-    private val tatorClickListener: () -> Unit
-) : RecyclerView.Adapter<BuildingFavsAdapter.ViewHolder>() {
-    private val favoriteItems = mutableListOf<Int>()
+    private val buildingFavs: List<Pair<Int, BuildingImage>>,
+    private val clickListeners: Map<Int, () -> Unit>
+) : RecyclerView.Adapter<BuildingFavsAdapter.BuildingFavsViewHolder>() {
 
-    inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val buildingImage: ImageView = itemView.findViewById(R.id.building_image)
-    }
-
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BuildingFavsViewHolder {
         val view = LayoutInflater.from(parent.context)
             .inflate(R.layout.item_building_image, parent, false)
-        return ViewHolder(view)
+        return BuildingFavsViewHolder(view)
     }
 
-    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.buildingImage.setImageResource(buildingImages[position])
-        holder.buildingImage.visibility = if (favoriteItems.contains(buildingImages[position])) View.VISIBLE else View.INVISIBLE
+    override fun onBindViewHolder(holder: BuildingFavsViewHolder, position: Int) {
+        val (imageId, buildingImage) = buildingFavs[position]
+        holder.bind(buildingImage)
+    }
 
-        holder.buildingImage.setOnClickListener {
-            when (position) {
-                0 -> casClickListener()
-                1 -> cceClickListener()
-                2 -> echlinClickListener()
-                3 -> lenderClickListener()
-                4 -> libraryClickListener()
-                5 -> tatorClickListener()
+    override fun getItemCount(): Int {
+        return buildingFavs.size
+    }
+
+    inner class BuildingFavsViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        private val imageView: ImageView = itemView.findViewById(R.id.building_image)
+
+        init {
+            itemView.setOnClickListener {
+                clickListeners[buildingFavs[adapterPosition].first]?.invoke()
             }
         }
-    }
 
-    override fun getItemCount() = buildingImages.size
+        fun bind(buildingImage: BuildingImage) {
+            Glide.with(itemView.context)
+                .load(buildingImage.id)
+                .into(imageView)
+        }
+    }
 }

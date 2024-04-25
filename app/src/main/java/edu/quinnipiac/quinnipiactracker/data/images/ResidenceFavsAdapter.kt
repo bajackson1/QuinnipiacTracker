@@ -9,63 +9,42 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import edu.quinnipiac.quinnipiactracker.R
 
 class ResidenceFavsAdapter(
-    // List of images to be displayed
-    private val residenceFavs: List<Int>,
-    // Click listeners for each building
-    private val commonsClickListener: () -> Unit,
-    private val complexClickListener: () -> Unit,
-    private val danaClickListener: () -> Unit,
-    private val hillClickListener: () -> Unit,
-    private val irmaClickListener: () -> Unit,
-    private val larsonClickListener: () -> Unit,
-    private val ledgesClickListener: () -> Unit,
-    private val mountainviewClickListener: () -> Unit,
-    private val perlClickListener: () -> Unit,
-    private val troupClickListener: () -> Unit,
-    private val villageClickListener: () -> Unit,
-) : RecyclerView.Adapter<ResidenceFavsAdapter.ViewHolder>() {
-    private val favoriteItems = mutableListOf<Int>()
+    private val residenceFavs: List<Pair<Int, ResidenceImage>>,
+    private val clickListeners: Map<Int, () -> Unit>
+) : RecyclerView.Adapter<ResidenceFavsAdapter.ResidenceFavsViewHolder>() {
 
-    inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val residenceImage: ImageView = itemView.findViewById(R.id.building_image)
-    }
-
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ResidenceFavsViewHolder {
         val view = LayoutInflater.from(parent.context)
             .inflate(R.layout.item_building_image, parent, false)
-        return ViewHolder(view)
+        return ResidenceFavsViewHolder(view)
     }
 
-    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.residenceImage.setImageResource(residenceFavs[position])
-        holder.residenceImage.visibility = if (favoriteItems.contains(residenceFavs[position])) View.VISIBLE else View.INVISIBLE
+    override fun onBindViewHolder(holder: ResidenceFavsViewHolder, position: Int) {
+        val (imageId, residenceImage) = residenceFavs[position]
+        holder.bind(residenceImage)
+    }
 
-        // Setting the click listener for each image based on its position in the view
-        holder.residenceImage.setOnClickListener {
-            when (position) {
-                0 -> commonsClickListener()
-                1 -> complexClickListener()
-                2 -> danaClickListener()
-                3 -> hillClickListener()
-                4 -> irmaClickListener()
-                5 -> larsonClickListener()
-                6 -> ledgesClickListener()
-                7 -> mountainviewClickListener()
-                8 -> perlClickListener()
-                9 -> troupClickListener()
-                10 -> villageClickListener()
+    override fun getItemCount(): Int {
+        return residenceFavs.size
+    }
+
+    inner class ResidenceFavsViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        private val imageView: ImageView = itemView.findViewById(R.id.building_image)
+
+        init {
+            itemView.setOnClickListener {
+                clickListeners[residenceFavs[adapterPosition].first]?.invoke()
             }
         }
-    }
 
-    override fun getItemCount() = residenceFavs.size
-
-    fun updateFavoriteItems(newFavoriteItems: List<Int>) {
-        favoriteItems.clear()
-        favoriteItems.addAll(newFavoriteItems)
-        notifyDataSetChanged()
+        fun bind(residenceImage: ResidenceImage) {
+            Glide.with(itemView.context)
+                .load(residenceImage.id)
+                .into(imageView)
+        }
     }
 }

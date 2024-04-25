@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import edu.quinnipiac.quinnipiactracker.R
+import edu.quinnipiac.quinnipiactracker.data.images.BuildingImage
 import edu.quinnipiac.quinnipiactracker.data.images.SharedViewModel
 
 class TatorFragment : Fragment() {
@@ -35,7 +36,12 @@ class TatorFragment : Fragment() {
 
         // Favorite button function
         favoriteButton.setOnClickListener {
-            sharedViewModel.addFavoriteItem(R.drawable.tator)
+            val tatorImage = BuildingImage(
+                id = R.drawable.tator,
+                imageUrl = "https://example.com/tator.jpg",
+                title = "Tator Building"
+            )
+            sharedViewModel.addBuildingFav(tatorImage)
         }
 
         return view

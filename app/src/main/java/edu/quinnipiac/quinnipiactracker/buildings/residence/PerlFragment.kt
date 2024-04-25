@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import edu.quinnipiac.quinnipiactracker.R
+import edu.quinnipiac.quinnipiactracker.data.images.ResidenceImage
 import edu.quinnipiac.quinnipiactracker.data.images.SharedViewModel
 
 class PerlFragment : Fragment() {
@@ -35,7 +36,12 @@ class PerlFragment : Fragment() {
 
         // Favorite button function
         favoriteButton.setOnClickListener {
-            sharedViewModel.addFavoriteItem(R.drawable.commons)
+            val perlImage = ResidenceImage(
+                id = R.drawable.perl,
+                imageUrl = "https://example.com/perl.jpg",
+                title = "Perl Building"
+            )
+            sharedViewModel.addResidenceFav(perlImage)
         }
 
         return view

@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import edu.quinnipiac.quinnipiactracker.R
+import edu.quinnipiac.quinnipiactracker.data.images.BuildingImage
 import edu.quinnipiac.quinnipiactracker.data.images.SharedViewModel
 
 class CceFragment : Fragment() {
@@ -35,7 +36,12 @@ class CceFragment : Fragment() {
 
         // Favorite button function
         favoriteButton.setOnClickListener {
-            sharedViewModel.addFavoriteItem(R.drawable.cce)
+            val cceImage = BuildingImage(
+                id = R.drawable.cce,
+                imageUrl = "https://example.com/cce.jpg",
+                title = "CCE Building"
+            )
+            sharedViewModel.addBuildingFav(cceImage)
         }
 
         return view
