@@ -1,6 +1,5 @@
-package edu.quinnipiac.quinnipiactracker.lists
+package edu.quinnipiac.quinnipiactracker.fragments.lists
 
-import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -10,14 +9,14 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import edu.quinnipiac.quinnipiactracker.R
-import edu.quinnipiac.quinnipiactracker.data.Dining
-import edu.quinnipiac.quinnipiactracker.data.DiningAdapter
-import edu.quinnipiac.quinnipiactracker.data.DiningRoomDatabase
-import edu.quinnipiac.quinnipiactracker.data.DiningViewModel
-import edu.quinnipiac.quinnipiactracker.data.DiningViewModelFactory
+import edu.quinnipiac.quinnipiactracker.data.dining.Dining
+import edu.quinnipiac.quinnipiactracker.data.dining.DiningAdapter
+import edu.quinnipiac.quinnipiactracker.data.dining.DiningRoomDatabase
+import edu.quinnipiac.quinnipiactracker.data.dining.DiningViewModel
+import edu.quinnipiac.quinnipiactracker.data.dining.DiningViewModelFactory
 import edu.quinnipiac.quinnipiactracker.databinding.FragmentDiningHomeBinding
 
-class DiningHomeFragment : Fragment() {
+class DiningHomeFragment : Fragment(R.layout.fragment_dining_home) {
     private var _binding: FragmentDiningHomeBinding? = null
     private val binding get() = _binding!!
 
@@ -32,7 +31,6 @@ class DiningHomeFragment : Fragment() {
         return binding.root
     }
 
-    @SuppressLint("NotifyDataSetChanged")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -48,15 +46,27 @@ class DiningHomeFragment : Fragment() {
         }
 
         binding.backButton.setOnClickListener {
-            findNavController().navigateUp()
+            findNavController().navigate(R.id.action_diningHomeFragment_to_homeFragment)
         }
 
-        // Observe the dinings from the ViewModel and update the adapter
         val viewModel = ViewModelProvider(this, DiningViewModelFactory(DiningRoomDatabase.getDatabase(requireContext()).diningDao()))[DiningViewModel::class.java]
-        viewModel.allDinings.observe(viewLifecycleOwner) { updatedDinings ->
-            dinings.clear()
-            dinings.addAll(updatedDinings)
+        viewModel.allDinings.observe(viewLifecycleOwner) { dinings ->
+            this.dinings.clear()
+            this.dinings.addAll(dinings)
             diningAdapter.notifyDataSetChanged()
+            updateUI(dinings)
+        }
+    }
+
+    private fun updateUI(dinings: List<Dining>) {
+        if (dinings.isNotEmpty()) {
+            binding.logoImageView.visibility = View.GONE
+            binding.logoTextView.visibility = View.GONE
+            binding.diningRecyclerView.visibility = View.VISIBLE
+        } else {
+            binding.logoImageView.visibility = View.VISIBLE
+            binding.logoTextView.visibility = View.VISIBLE
+            binding.diningRecyclerView.visibility = View.GONE
         }
     }
 

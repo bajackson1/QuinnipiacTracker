@@ -10,7 +10,12 @@
     <string name="my_buildings">My Buildings</string>
     <string name="my_residence_halls">My Residence Halls</string>
     <string name="my_dining_halls">My Dining Halls</string>
-    <string name="academic_buildings_title">ACADEMIC BUILDINGS</string>
+    <string name="academic_buildings_title">Academic Buildings</string>
+    <string name="dining_buildings_title">Dining Halls</string>
+    <string name="residence_buildings_title">Residence Halls</string>
+    <string name="academic_favs_title">Academic Building Favorites</string>
+    <string name="dining_favs_title">Dining Hall Favorites</string>
+    <string name="residence_favs_title">Residence Hall Favorites</string>
     <string name="favorite_academic_buildings">ACADEMIC BUILDING FAVORITES</string>
     <string name="todo">TODO</string>
     <string name="favs_fragment">Favs Fragment</string>
@@ -38,4 +43,15 @@
     <string name="enter_the_description">Enter the description</string>
     <string name="save">Save</string>
     <string name="enter_a_building_name">Enter a building name</string>
+    <string name="app_information">App Information</string>
+    <string name="app_credits">App Credits</string>
+    <string name="cancel">Cancel</string>
+    <string name="delete_note">Delete Note</string>
+    <string name="building_title">Building Title</string>
+    <string name="reset_map">Reset Map</string>
+    <string name="enter_a_dining_name">Enter a dining hall name</string>
+    <string name="enter_a_residence_name">Enter a residence hall name</string>
+    <string name="location_logo">Location</string>
+    <string name="no_location_added_yet">No location added yet</string>
+    <string name="_2">2</string>
 </resources>

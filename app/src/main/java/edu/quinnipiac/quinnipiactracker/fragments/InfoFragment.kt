@@ -4,7 +4,7 @@
  * their data.
  */
 
-package edu.quinnipiac.quinnipiactracker
+package edu.quinnipiac.quinnipiactracker.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -14,6 +14,10 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import edu.quinnipiac.quinnipiactracker.data.images.BuildingImageAdapter
+import edu.quinnipiac.quinnipiactracker.data.images.DiningImageAdapter
+import edu.quinnipiac.quinnipiactracker.R
+import edu.quinnipiac.quinnipiactracker.data.images.ResidenceImageAdapter
 
 class InfoFragment : Fragment() {
     private lateinit var buildingImageAdapter: BuildingImageAdapter

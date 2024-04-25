@@ -4,7 +4,7 @@
  * We created an API key and used the instructions on the website to implement a working map.
  */
 
-package edu.quinnipiac.quinnipiactracker
+package edu.quinnipiac.quinnipiactracker.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -22,15 +22,16 @@ import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
-import edu.quinnipiac.quinnipiactracker.data.BuildingRoomDatabase
-import edu.quinnipiac.quinnipiactracker.data.BuildingViewModel
-import edu.quinnipiac.quinnipiactracker.data.BuildingViewModelFactory
-import edu.quinnipiac.quinnipiactracker.data.DiningRoomDatabase
-import edu.quinnipiac.quinnipiactracker.data.DiningViewModel
-import edu.quinnipiac.quinnipiactracker.data.DiningViewModelFactory
-import edu.quinnipiac.quinnipiactracker.data.ResidenceRoomDatabase
-import edu.quinnipiac.quinnipiactracker.data.ResidenceViewModel
-import edu.quinnipiac.quinnipiactracker.data.ResidenceViewModelFactory
+import edu.quinnipiac.quinnipiactracker.R
+import edu.quinnipiac.quinnipiactracker.data.academic.BuildingRoomDatabase
+import edu.quinnipiac.quinnipiactracker.data.academic.BuildingViewModel
+import edu.quinnipiac.quinnipiactracker.data.academic.BuildingViewModelFactory
+import edu.quinnipiac.quinnipiactracker.data.dining.DiningRoomDatabase
+import edu.quinnipiac.quinnipiactracker.data.dining.DiningViewModel
+import edu.quinnipiac.quinnipiactracker.data.dining.DiningViewModelFactory
+import edu.quinnipiac.quinnipiactracker.data.residence.ResidenceRoomDatabase
+import edu.quinnipiac.quinnipiactracker.data.residence.ResidenceViewModel
+import edu.quinnipiac.quinnipiactracker.data.residence.ResidenceViewModelFactory
 
 class HomeFragment : Fragment(R.layout.fragment_home), OnMapReadyCallback {
     private lateinit var googleMap: GoogleMap

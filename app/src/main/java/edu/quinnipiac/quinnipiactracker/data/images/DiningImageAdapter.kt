@@ -2,13 +2,14 @@
  * This is how you can get a scrollable gallery like we have in Info and Favs.
  * It allows us to display a large array of images in a smooth fashion.
  */
-package edu.quinnipiac.quinnipiactracker
+package edu.quinnipiac.quinnipiactracker.data.images
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
+import edu.quinnipiac.quinnipiactracker.R
 
 class DiningImageAdapter(
     // List of images to be displayed

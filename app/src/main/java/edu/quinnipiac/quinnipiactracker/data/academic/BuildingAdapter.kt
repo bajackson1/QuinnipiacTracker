@@ -1,4 +1,4 @@
-package edu.quinnipiac.quinnipiactracker.data
+package edu.quinnipiac.quinnipiactracker.data.academic
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

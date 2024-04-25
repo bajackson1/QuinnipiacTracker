@@ -1,31 +1,120 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:background="@color/white"
-    tools:context=".FavsFragment">
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/building_images_recycler_view"
-        android:layout_width="wrap_content"
-        android:layout_height="241dp"/>
+    android:layout_height="match_parent"
+    tools:context=".fragments.FavsFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/box_outline"
-        android:orientation="horizontal"
-        android:layout_margin="4dp"
-        android:padding="16dp">
-        <TextView
-            android:layout_width="0dp"
+        android:orientation="vertical">
+
+        <!-- Academic building horizontal image scroller -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/building_favs_recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="240dp" />
+
+        <!-- TextView for the academic building category title -->
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/favorite_academic_buildings"
-            android:textSize="16sp"
-            android:textColor="@color/QUnavy"/>
+            android:background="@drawable/box_outline"
+            android:orientation="horizontal"
+            android:layout_margin="4dp"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/academic_favs_title"
+                android:textSize="16sp"
+                android:textColor="@color/QUnavy"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/building_favs_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/FillerNumbers"
+                android:textSize="16sp"
+                android:textColor="@color/QUnavy"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <!-- Dining building horizontal image scroller -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/dining_favs_recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="240dp" />
+
+        <!-- TextView for the dining building category title -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/box_outline"
+            android:orientation="horizontal"
+            android:layout_margin="4dp"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/dining_favs_title"
+                android:textSize="16sp"
+                android:textColor="@color/QUnavy"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/dining_favs_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/FillerNumbers"
+                android:textSize="16sp"
+                android:textColor="@color/QUnavy"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <!-- Residence building horizontal image scroller -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/residence_favs_recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="240dp" />
+
+        <!-- TextView for the residence building category title -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/box_outline"
+            android:orientation="horizontal"
+            android:layout_margin="4dp"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/residence_favs_title"
+                android:textSize="16sp"
+                android:textColor="@color/QUnavy"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/residence_favs_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/FillerNumbers"
+                android:textSize="16sp"
+                android:textColor="@color/QUnavy"
+                android:textStyle="bold" />
+
+        </LinearLayout>
 
     </LinearLayout>
-</LinearLayout>
+
+</ScrollView>

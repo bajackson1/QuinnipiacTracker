@@ -1,10 +1,11 @@
-package edu.quinnipiac.quinnipiactracker
+package edu.quinnipiac.quinnipiactracker.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import edu.quinnipiac.quinnipiactracker.R
 
 class HelpFragment : Fragment() {
     override fun onCreateView(

@@ -1,4 +1,4 @@
-package edu.quinnipiac.quinnipiactracker.data
+package edu.quinnipiac.quinnipiactracker.data.residence
 
 import android.content.Context
 import androidx.room.Database

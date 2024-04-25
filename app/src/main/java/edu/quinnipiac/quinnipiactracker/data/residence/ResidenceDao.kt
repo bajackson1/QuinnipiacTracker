@@ -1,4 +1,4 @@
-package edu.quinnipiac.quinnipiactracker.data
+package edu.quinnipiac.quinnipiactracker.data.residence
 
 import androidx.room.Dao
 import androidx.room.Delete

@@ -1,4 +1,4 @@
-package edu.quinnipiac.quinnipiactracker.lists
+package edu.quinnipiac.quinnipiactracker.fragments.lists
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,10 +10,10 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.google.android.gms.maps.model.LatLng
 import edu.quinnipiac.quinnipiactracker.R
-import edu.quinnipiac.quinnipiactracker.data.Residence
-import edu.quinnipiac.quinnipiactracker.data.ResidenceRoomDatabase
-import edu.quinnipiac.quinnipiactracker.data.ResidenceViewModel
-import edu.quinnipiac.quinnipiactracker.data.ResidenceViewModelFactory
+import edu.quinnipiac.quinnipiactracker.data.residence.Residence
+import edu.quinnipiac.quinnipiactracker.data.residence.ResidenceRoomDatabase
+import edu.quinnipiac.quinnipiactracker.data.residence.ResidenceViewModel
+import edu.quinnipiac.quinnipiactracker.data.residence.ResidenceViewModelFactory
 import edu.quinnipiac.quinnipiactracker.databinding.FragmentResidenceAddBinding
 
 class ResidenceAddFragment : Fragment() {

@@ -8,25 +8,38 @@
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
         app:cardElevation="6dp"
-        app:cardCornerRadius="10dp">
+        app:cardBackgroundColor="@android:color/white">
 
-        <LinearLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:background="@drawable/blue_border"
+            android:background="@drawable/box_outline"
             android:padding="16dp">
 
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:id="@+id/noteTitle"
-                android:layout_weight="200"
-                android:textColor="@color/QUblue"
-                android:text="Note Title"
+                android:id="@+id/buildingTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textColor="@color/QUnavy"
+                android:text="@string/building_title"
                 android:textStyle="bold"
-                android:textSize="18sp"/>
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/deleteIcon" />
 
-        </LinearLayout>
+            <ImageView
+                android:id="@+id/deleteIcon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/baseline_delete_24"
+                android:contentDescription="@string/delete_note"
+                android:clickable="true"
+                android:focusable="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
+
 </layout>

@@ -4,18 +4,23 @@
  * their data.
  */
 
-package edu.quinnipiac.quinnipiactracker
+package edu.quinnipiac.quinnipiactracker.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import edu.quinnipiac.quinnipiactracker.data.SharedViewModel
+import edu.quinnipiac.quinnipiactracker.R
+import edu.quinnipiac.quinnipiactracker.data.images.BuildingFavsAdapter
+import edu.quinnipiac.quinnipiactracker.data.images.DiningFavsAdapter
+import edu.quinnipiac.quinnipiactracker.data.images.ResidenceFavsAdapter
+import edu.quinnipiac.quinnipiactracker.data.images.SharedViewModel
 
 class FavsFragment : Fragment() {
     private lateinit var buildingImageAdapter: BuildingFavsAdapter
@@ -27,7 +32,7 @@ class FavsFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view = inflater.inflate(R.layout.fragment_info, container, false)
+        val view = inflater.inflate(R.layout.fragment_favs, container, false)
 
         sharedViewModel = ViewModelProvider(requireActivity())[SharedViewModel::class.java]
 
@@ -52,9 +57,9 @@ class FavsFragment : Fragment() {
         )
 
         // Finding a RecyclerView in the layout
-        val buildingRecyclerView = view.findViewById<RecyclerView>(R.id.building_images_recycler_view)
-        val diningRecyclerView = view.findViewById<RecyclerView>(R.id.dining_images_recycler_view)
-        val residenceRecyclerView = view.findViewById<RecyclerView>(R.id.residence_images_recycler_view)
+        val buildingRecyclerView = view.findViewById<RecyclerView>(R.id.building_favs_recycler_view)
+        val diningRecyclerView = view.findViewById<RecyclerView>(R.id.dining_favs_recycler_view)
+        val residenceRecyclerView = view.findViewById<RecyclerView>(R.id.residence_favs_recycler_view)
 
         // Making the layout of the RecyclerView a horizontal LinearLayoutManager
         buildingRecyclerView.layoutManager = LinearLayoutManager(requireContext(), RecyclerView.HORIZONTAL, false)
@@ -87,9 +92,19 @@ class FavsFragment : Fragment() {
         diningRecyclerView.adapter = diningImageAdapter
         residenceRecyclerView.adapter = residenceImageAdapter
 
+        // Finding the TextViews in the layout
+        val buildingFavsCountTextView = view.findViewById<TextView>(R.id.building_favs_count)
+        val diningFavsCountTextView = view.findViewById<TextView>(R.id.dining_favs_count)
+        val residenceFavsCountTextView = view.findViewById<TextView>(R.id.residence_favs_count)
+
         // Observe the favoriteItems LiveData
         sharedViewModel.favoriteItems.observe(viewLifecycleOwner) { favoriteItems ->
             updateFavoriteItems(favoriteItems)
+            updateFavoriteItemsCount(
+                buildingFavsCountTextView,
+                diningFavsCountTextView,
+                residenceFavsCountTextView
+            )
         }
 
         return view
@@ -104,6 +119,16 @@ class FavsFragment : Fragment() {
 
         // Update the ResidenceFavsAdapter
         residenceImageAdapter.updateFavoriteItems(favoriteItems)
+    }
+
+    private fun updateFavoriteItemsCount(
+        buildingFavsCountTextView: TextView,
+        diningFavsCountTextView: TextView,
+        residenceFavsCountTextView: TextView
+    ) {
+        buildingFavsCountTextView.text = buildingImageAdapter.itemCount.toString()
+        diningFavsCountTextView.text = diningImageAdapter.itemCount.toString()
+        residenceFavsCountTextView.text = residenceImageAdapter.itemCount.toString()
     }
 
     // Function for CAS navigation

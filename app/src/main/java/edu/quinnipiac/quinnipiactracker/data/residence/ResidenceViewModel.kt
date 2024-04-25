@@ -1,4 +1,4 @@
-package edu.quinnipiac.quinnipiactracker.data
+package edu.quinnipiac.quinnipiactracker.data.residence
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider

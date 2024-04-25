@@ -1,6 +1,5 @@
-package edu.quinnipiac.quinnipiactracker.lists
+package edu.quinnipiac.quinnipiactracker.fragments.lists
 
-import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -10,14 +9,14 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import edu.quinnipiac.quinnipiactracker.R
-import edu.quinnipiac.quinnipiactracker.data.Building
-import edu.quinnipiac.quinnipiactracker.data.BuildingAdapter
-import edu.quinnipiac.quinnipiactracker.data.BuildingRoomDatabase
-import edu.quinnipiac.quinnipiactracker.data.BuildingViewModel
-import edu.quinnipiac.quinnipiactracker.data.BuildingViewModelFactory
+import edu.quinnipiac.quinnipiactracker.data.academic.Building
+import edu.quinnipiac.quinnipiactracker.data.academic.BuildingAdapter
+import edu.quinnipiac.quinnipiactracker.data.academic.BuildingRoomDatabase
+import edu.quinnipiac.quinnipiactracker.data.academic.BuildingViewModel
+import edu.quinnipiac.quinnipiactracker.data.academic.BuildingViewModelFactory
 import edu.quinnipiac.quinnipiactracker.databinding.FragmentBuildingHomeBinding
 
-class BuildingHomeFragment : Fragment() {
+class BuildingHomeFragment : Fragment(R.layout.fragment_building_home) {
     private var _binding: FragmentBuildingHomeBinding? = null
     private val binding get() = _binding!!
 
@@ -32,7 +31,6 @@ class BuildingHomeFragment : Fragment() {
         return binding.root
     }
 
-    @SuppressLint("NotifyDataSetChanged")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -48,18 +46,28 @@ class BuildingHomeFragment : Fragment() {
         }
 
         binding.backButton.setOnClickListener {
-            findNavController().navigateUp()
+            findNavController().navigate(R.id.action_buildingHomeFragment_to_homeFragment)
         }
 
         val viewModel = ViewModelProvider(this, BuildingViewModelFactory(BuildingRoomDatabase.getDatabase(requireContext()).buildingDao()))[BuildingViewModel::class.java]
-        viewModel.allBuildings.observe(viewLifecycleOwner) { updatedBuildings ->
-            buildings.clear()
-            buildings.addAll(updatedBuildings)
+        viewModel.allBuildings.observe(viewLifecycleOwner) { buildings ->
+            this.buildings.clear()
+            this.buildings.addAll(buildings)
             buildingAdapter.notifyDataSetChanged()
+            updateUI(buildings)
         }
+    }
 
-        binding.logoImageView.visibility = if (buildings.isNotEmpty()) View.GONE else View.VISIBLE
-        binding.logoTextView.visibility = if (buildings.isNotEmpty()) View.GONE else View.VISIBLE
+    private fun updateUI(buildings: List<Building>) {
+        if (buildings.isNotEmpty()) {
+            binding.logoImageView.visibility = View.GONE
+            binding.logoTextView.visibility = View.GONE
+            binding.buildingRecyclerView.visibility = View.VISIBLE
+        } else {
+            binding.logoImageView.visibility = View.VISIBLE
+            binding.logoTextView.visibility = View.VISIBLE
+            binding.buildingRecyclerView.visibility = View.GONE
+        }
     }
 
     override fun onDestroyView() {

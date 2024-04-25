@@ -1,4 +1,4 @@
-package edu.quinnipiac.quinnipiactracker.residence
+package edu.quinnipiac.quinnipiactracker.buildings.residence
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -9,7 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import edu.quinnipiac.quinnipiactracker.R
-import edu.quinnipiac.quinnipiactracker.data.SharedViewModel
+import edu.quinnipiac.quinnipiactracker.data.images.SharedViewModel
 
 class IrmaFragment : Fragment() {
     private lateinit var sharedViewModel: SharedViewModel

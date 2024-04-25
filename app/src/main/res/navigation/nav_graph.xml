@@ -9,20 +9,24 @@
     <!--Home Fragment-->
     <fragment
         android:id="@+id/homeFragment"
-        android:name="edu.quinnipiac.quinnipiactracker.HomeFragment"
+        android:name="edu.quinnipiac.quinnipiactracker.fragments.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home">
         <action
             android:id="@+id/action_homeFragment_to_buildingHomeFragment"
-            app:destination="@id/buildingHomeFragment"
-            app:argType="edu.quinnipiac.quinnipiactracker.lists.BuildingAddFragmentDirections.ActionBuildingAddFragmentToHomeFragment"
-            app:nullable="true" />
+            app:destination="@id/buildingHomeFragment"/>
+        <action
+            android:id="@+id/action_homeFragment_to_diningHomeFragment"
+            app:destination="@id/diningHomeFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_residenceHomeFragment"
+            app:destination="@id/residenceHomeFragment" />
     </fragment>
 
     <!--Info Fragment-->
     <fragment
         android:id="@+id/infoFragment"
-        android:name="edu.quinnipiac.quinnipiactracker.InfoFragment"
+        android:name="edu.quinnipiac.quinnipiactracker.fragments.InfoFragment"
         android:label="fragment_info"
         tools:layout="@layout/fragment_info">
         <!--Actions to go to and from each building-->
@@ -44,98 +48,169 @@
         <action
             android:id="@+id/action_infoFragment_to_echlinFragment"
             app:destination="@id/echlinFragment"/>
+        <action
+            android:id="@+id/action_infoFragment_to_favsFragment"
+            app:destination="@id/favsFragment" />
+        <action
+            android:id="@+id/action_infoFragment_to_ratFragment"
+            app:destination="@id/ratFragment" />
+        <action
+            android:id="@+id/action_infoFragment_to_commonsFragment"
+            app:destination="@id/commonsFragment" />
+        <action
+            android:id="@+id/action_infoFragment_to_studentCenterFragment"
+            app:destination="@id/studentCenterFragment" />
+        <action
+            android:id="@+id/action_infoFragment_to_irmaFragment"
+            app:destination="@id/irmaFragment" />
     </fragment>
 
     <!--Favs Fragment-->
     <fragment
         android:id="@+id/favsFragment"
-        android:name="edu.quinnipiac.quinnipiactracker.FavsFragment"
+        android:name="edu.quinnipiac.quinnipiactracker.fragments.FavsFragment"
         android:label="fragment_favs"
-        tools:layout="@layout/fragment_favs"/>
+        tools:layout="@layout/fragment_favs">
+        <action
+            android:id="@+id/action_favsFragment_to_infoFragment"
+            app:destination="@id/infoFragment" />
+        <action
+            android:id="@+id/action_favsFragment_to_echlinFragment"
+            app:destination="@id/echlinFragment" />
+        <action
+            android:id="@+id/action_favsFragment_to_ratFragment"
+            app:destination="@id/ratFragment" />
+        <action
+            android:id="@+id/action_favsFragment_to_commonsFragment"
+            app:destination="@id/commonsFragment" />
+        <action
+            android:id="@+id/action_favsFragment_to_tatorFragment"
+            app:destination="@id/tatorFragment" />
+        <action
+            android:id="@+id/action_favsFragment_to_libraryFragment"
+            app:destination="@id/libraryFragment" />
+        <action
+            android:id="@+id/action_favsFragment_to_casFragment"
+            app:destination="@id/casFragment" />
+        <action
+            android:id="@+id/action_favsFragment_to_studentCenterFragment"
+            app:destination="@id/studentCenterFragment" />
+        <action
+            android:id="@+id/action_favsFragment_to_lenderFragment"
+            app:destination="@id/lenderFragment" />
+        <action
+            android:id="@+id/action_favsFragment_to_irmaFragment"
+            app:destination="@id/irmaFragment" />
+        <action
+            android:id="@+id/action_favsFragment_to_cceFragment"
+            app:destination="@id/cceFragment" />
+    </fragment>
 
     <!--Help Fragment-->
     <fragment
         android:id="@+id/helpFragment"
-        android:name="edu.quinnipiac.quinnipiactracker.HelpFragment"
+        android:name="edu.quinnipiac.quinnipiactracker.fragments.HelpFragment"
         android:label="fragment_help"
         tools:layout="@layout/fragment_help"/>
 
     <!--CAS Fragment-->
     <fragment
         android:id="@+id/casFragment"
-        android:name="edu.quinnipiac.quinnipiactracker.buildings.CasFragment"
+        android:name="edu.quinnipiac.quinnipiactracker.buildings.academic.CasFragment"
         android:label="CasFragment">
         <!--Action to go back to Info Fragment-->
         <action
             android:id="@+id/action_casFragment_to_infoFragment"
             app:destination="@id/infoFragment"/>
+        <action
+            android:id="@+id/action_casFragment_to_favsFragment"
+            app:destination="@id/favsFragment" />
     </fragment>
 
     <!--CCE Fragment-->
     <fragment
         android:id="@+id/cceFragment"
-        android:name="edu.quinnipiac.quinnipiactracker.buildings.CceFragment"
+        android:name="edu.quinnipiac.quinnipiactracker.buildings.academic.CceFragment"
         android:label="CceFragment">
         <!--Action to go back to Info Fragment-->
         <action
             android:id="@+id/action_cceFragment_to_infoFragment"
             app:destination="@id/infoFragment"/>
+        <action
+            android:id="@+id/action_cceFragment_to_favsFragment"
+            app:destination="@id/favsFragment" />
     </fragment>
 
     <!--Echlin Fragment-->
     <fragment
         android:id="@+id/echlinFragment"
-        android:name="edu.quinnipiac.quinnipiactracker.buildings.EchlinFragment"
+        android:name="edu.quinnipiac.quinnipiactracker.buildings.academic.EchlinFragment"
         android:label="EchlinFragment">
         <!--Action to go back to Info Fragment-->
         <action
             android:id="@+id/action_echlinFragment_to_infoFragment"
             app:destination="@id/infoFragment"/>
+        <action
+            android:id="@+id/action_echlinFragment_to_favsFragment"
+            app:destination="@id/favsFragment" />
     </fragment>
 
     <!--Lender Fragment-->
     <fragment
         android:id="@+id/lenderFragment"
-        android:name="edu.quinnipiac.quinnipiactracker.buildings.LenderFragment"
+        android:name="edu.quinnipiac.quinnipiactracker.buildings.academic.LenderFragment"
         android:label="LenderFragment">
         <!--Action to go back to Info Fragment-->
         <action
             android:id="@+id/action_lenderFragment_to_infoFragment"
             app:destination="@id/infoFragment"/>
+        <action
+            android:id="@+id/action_lenderFragment_to_favsFragment"
+            app:destination="@id/favsFragment" />
     </fragment>
 
     <!--Tator Fragment-->
     <fragment
         android:id="@+id/tatorFragment"
-        android:name="edu.quinnipiac.quinnipiactracker.buildings.TatorFragment"
+        android:name="edu.quinnipiac.quinnipiactracker.buildings.academic.TatorFragment"
         android:label="TatorFragment">
         <!--Action to go back to Info Fragment-->
         <action
             android:id="@+id/action_tatorFragment_to_infoFragment"
             app:destination="@id/infoFragment"/>
+        <action
+            android:id="@+id/action_tatorFragment_to_favsFragment"
+            app:destination="@id/favsFragment" />
     </fragment>
 
     <!--Library Fragment-->
     <fragment
         android:id="@+id/libraryFragment"
-        android:name="edu.quinnipiac.quinnipiactracker.buildings.LibraryFragment"
+        android:name="edu.quinnipiac.quinnipiactracker.buildings.academic.LibraryFragment"
         android:label="LibraryFragment">
         <!--Action to go back to Info Fragment-->
         <action
             android:id="@+id/action_libraryFragment_to_infoFragment"
             app:destination="@id/infoFragment"/>
+        <action
+            android:id="@+id/action_libraryFragment_to_favsFragment"
+            app:destination="@id/favsFragment" />
     </fragment>
+
+
     <fragment
         android:id="@+id/buildingAddFragment"
-        android:name="edu.quinnipiac.quinnipiactracker.lists.BuildingAddFragment"
+        android:name="edu.quinnipiac.quinnipiactracker.fragments.lists.BuildingAddFragment"
         android:label="BuildingAddFragment" >
         <action
             android:id="@+id/action_buildingAddFragment_to_buildingHomeFragment"
             app:destination="@id/buildingHomeFragment" />
     </fragment>
+
+
     <fragment
         android:id="@+id/buildingHomeFragment"
-        android:name="edu.quinnipiac.quinnipiactracker.lists.BuildingHomeFragment"
+        android:name="edu.quinnipiac.quinnipiactracker.fragments.lists.BuildingHomeFragment"
         android:label="BuildingHomeFragment" >
         <action
             android:id="@+id/action_buildingHomeFragment_to_homeFragment"
@@ -143,6 +218,108 @@
         <action
             android:id="@+id/action_buildingHomeFragment_to_buildingAddFragment"
             app:destination="@id/buildingAddFragment" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/diningAddFragment"
+        android:name="edu.quinnipiac.quinnipiactracker.fragments.lists.DiningAddFragment"
+        android:label="DiningAddFragment" >
+        <action
+            android:id="@+id/action_diningAddFragment_to_diningHomeFragment"
+            app:destination="@id/diningHomeFragment" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/diningHomeFragment"
+        android:name="edu.quinnipiac.quinnipiactracker.fragments.lists.DiningHomeFragment"
+        android:label="DiningHomeFragment" >
+        <action
+            android:id="@+id/action_diningHomeFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+        <action
+            android:id="@+id/action_diningHomeFragment_to_diningAddFragment"
+            app:destination="@id/diningAddFragment" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/residenceAddFragment"
+        android:name="edu.quinnipiac.quinnipiactracker.fragments.lists.ResidenceAddFragment"
+        android:label="ResidenceAddFragment" >
+        <action
+            android:id="@+id/action_residenceAddFragment_to_residenceHomeFragment"
+            app:destination="@id/residenceHomeFragment" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/residenceHomeFragment"
+        android:name="edu.quinnipiac.quinnipiactracker.fragments.lists.ResidenceHomeFragment"
+        android:label="ResidenceHomeFragment" >
+        <action
+            android:id="@+id/action_residenceHomeFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+        <action
+            android:id="@+id/action_residenceHomeFragment_to_residenceAddFragment"
+            app:destination="@id/residenceAddFragment" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/ratFragment"
+        android:name="edu.quinnipiac.quinnipiactracker.buildings.dining.RatFragment"
+        android:label="fragment_rat"
+        tools:layout="@layout/fragment_rat" >
+        <action
+            android:id="@+id/action_ratFragment_to_infoFragment"
+            app:destination="@id/infoFragment" />
+        <action
+            android:id="@+id/action_ratFragment_to_favsFragment"
+            app:destination="@id/favsFragment" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/commonsFragment"
+        android:name="edu.quinnipiac.quinnipiactracker.buildings.residence.CommonsFragment"
+        android:label="fragment_commons"
+        tools:layout="@layout/fragment_commons" >
+        <action
+            android:id="@+id/action_commonsFragment_to_infoFragment"
+            app:destination="@id/infoFragment" />
+        <action
+            android:id="@+id/action_commonsFragment_to_favsFragment"
+            app:destination="@id/favsFragment" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/studentCenterFragment"
+        android:name="edu.quinnipiac.quinnipiactracker.buildings.dining.StudentCenterFragment"
+        android:label="fragment_student_center"
+        tools:layout="@layout/fragment_student_center" >
+        <action
+            android:id="@+id/action_studentCenterFragment_to_infoFragment"
+            app:destination="@id/infoFragment" />
+        <action
+            android:id="@+id/action_studentCenterFragment_to_favsFragment"
+            app:destination="@id/favsFragment" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/irmaFragment"
+        android:name="edu.quinnipiac.quinnipiactracker.buildings.residence.IrmaFragment"
+        android:label="fragment_irma"
+        tools:layout="@layout/fragment_irma" >
+        <action
+            android:id="@+id/action_irmaFragment_to_infoFragment"
+            app:destination="@id/infoFragment" />
+        <action
+            android:id="@+id/action_irmaFragment_to_favsFragment"
+            app:destination="@id/favsFragment" />
     </fragment>
 
 </navigation>

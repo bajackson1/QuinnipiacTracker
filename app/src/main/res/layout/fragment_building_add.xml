@@ -49,5 +49,20 @@
             android:layout_marginTop="16dp"
             android:maxLines="1" />
 
+        <TextView
+            android:id="@+id/cancelBuilding"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:padding="12dp"
+            android:textSize="20sp"
+            android:text="@string/cancel"
+            android:textColor="@color/white"
+            android:gravity="center"
+            android:layout_below="@id/saveBuildingName"
+            android:background="@drawable/blue_border"
+            android:backgroundTint="@color/QUblue"
+            android:layout_marginTop="16dp"
+            android:maxLines="1" />
+
     </RelativeLayout>
 </layout>

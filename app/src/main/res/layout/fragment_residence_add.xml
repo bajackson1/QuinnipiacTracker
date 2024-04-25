@@ -8,7 +8,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        tools:context=".lists.DiningAddFragment"
+        tools:context=".fragments.lists.ResidenceAddFragment"
         android:padding="12dp">
 
         <TextView
@@ -22,11 +22,11 @@
             android:textSize="24sp"
             android:textStyle="bold" />
 
-        <EditText
+        <AutoCompleteTextView
             android:id="@+id/addResidenceTitle"
             android:layout_width="match_parent"
             android:layout_height="60dp"
-            android:hint="@string/enter_the_title"
+            android:hint="@string/enter_a_residence_name"
             android:padding="12dp"
             android:textSize="20sp"
             android:layout_below="@id/addResidenceHeading"
@@ -44,6 +44,21 @@
             android:textColor="@color/white"
             android:gravity="center"
             android:layout_below="@id/addResidenceTitle"
+            android:background="@drawable/blue_border"
+            android:backgroundTint="@color/QUblue"
+            android:layout_marginTop="16dp"
+            android:maxLines="1" />
+
+        <TextView
+            android:id="@+id/cancelResidence"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:padding="12dp"
+            android:textSize="20sp"
+            android:text="@string/cancel"
+            android:textColor="@color/white"
+            android:gravity="center"
+            android:layout_below="@id/saveResidenceName"
             android:background="@drawable/blue_border"
             android:backgroundTint="@color/QUblue"
             android:layout_marginTop="16dp"

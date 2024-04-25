@@ -1,4 +1,4 @@
-package edu.quinnipiac.quinnipiactracker.data
+package edu.quinnipiac.quinnipiactracker.data.images
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

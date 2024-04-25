@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context=".HomeFragment">
+    tools:context=".fragments.HomeFragment">
 
     <!-- The Google Map view -->
     <!-- These parameters are specifically from the Google Maps API documentation. -->
@@ -13,7 +14,7 @@
         android:name="com.google.android.gms.maps.SupportMapFragment"
         android:layout_width="match_parent"
         android:layout_height="300dp"
-        android:layout_margin="4dp"/>
+        android:layout_margin="4dp" />
 
     <!-- Grouping the three user data boxes together -->
     <LinearLayout
@@ -38,7 +39,8 @@
                 android:layout_weight="1"
                 android:text="@string/my_buildings"
                 android:textSize="16sp"
-                android:textColor="@color/QUnavy"/>
+                android:textColor="@color/QUnavy"
+                android:textStyle="bold"/>
 
             <TextView
                 android:id="@+id/building_count"
@@ -46,36 +48,13 @@
                 android:layout_height="wrap_content"
                 android:text="@string/FillerNumbers"
                 android:textSize="16sp"
-                android:textColor="@color/QUnavy"/>
+                android:textColor="@color/QUnavy"
+                android:textStyle="bold"/>
 
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/box_outline"
-            android:orientation="horizontal"
-            android:layout_marginBottom="4dp"
-            android:padding="16dp">
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/my_residence_halls"
-                android:textSize="16sp"
-                android:textColor="@color/QUnavy"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/FillerNumbers"
-                android:textSize="16sp"
-                android:textColor="@color/QUnavy"/>
-
-        </LinearLayout>
-
-        <LinearLayout
+            android:id="@+id/dining_group"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/box_outline"
@@ -89,16 +68,63 @@
                 android:layout_weight="1"
                 android:text="@string/my_dining_halls"
                 android:textSize="16sp"
-                android:textColor="@color/QUnavy"/>
+                android:textColor="@color/QUnavy"
+                android:textStyle="bold"/>
 
             <TextView
+                android:id="@+id/dining_count"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/FillerNumbers"
                 android:textSize="16sp"
-                android:textColor="@color/QUnavy"/>
+                android:textColor="@color/QUnavy"
+                android:textStyle="bold"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/residence_group"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/box_outline"
+            android:orientation="horizontal"
+            android:layout_marginBottom="4dp"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/my_residence_halls"
+                android:textSize="16sp"
+                android:textColor="@color/QUnavy"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/residence_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/FillerNumbers"
+                android:textSize="16sp"
+                android:textColor="@color/QUnavy"
+                android:textStyle="bold"/>
 
         </LinearLayout>
 
     </LinearLayout>
+
+    <Button
+        android:id="@+id/reset_map_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center_horizontal"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="@color/QUnavy"
+        android:paddingHorizontal="16dp"
+        android:paddingVertical="8dp"
+        android:text="@string/reset_map"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        android:textStyle="bold" />
+
 </FrameLayout>
