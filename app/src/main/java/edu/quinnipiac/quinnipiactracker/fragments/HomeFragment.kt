@@ -20,6 +20,7 @@ import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
+import com.google.android.gms.maps.model.BitmapDescriptorFactory
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 import edu.quinnipiac.quinnipiactracker.R
@@ -99,7 +100,8 @@ class HomeFragment : Fragment(R.layout.fragment_home), OnMapReadyCallback {
                 val coordinates = LatLng(building.latitude, building.longitude)
                 googleMap.addMarker(MarkerOptions()
                     .position(coordinates)
-                    .title(building.itemName))
+                    .title(building.itemName)
+                    .icon(BitmapDescriptorFactory.defaultMarker(213f)))
             }
         }
 
@@ -110,7 +112,8 @@ class HomeFragment : Fragment(R.layout.fragment_home), OnMapReadyCallback {
                 val coordinates = LatLng(dining.latitude, dining.longitude)
                 googleMap.addMarker(MarkerOptions()
                     .position(coordinates)
-                    .title(dining.itemName))
+                    .title(dining.itemName)
+                    .icon(BitmapDescriptorFactory.defaultMarker(213f)))
             }
         }
 
@@ -121,7 +124,8 @@ class HomeFragment : Fragment(R.layout.fragment_home), OnMapReadyCallback {
                 val coordinates = LatLng(residence.latitude, residence.longitude)
                 googleMap.addMarker(MarkerOptions()
                     .position(coordinates)
-                    .title(residence.itemName))
+                    .title(residence.itemName)
+                    .icon(BitmapDescriptorFactory.defaultMarker(213f)))
             }
         }
     }
@@ -158,9 +162,12 @@ class HomeFragment : Fragment(R.layout.fragment_home), OnMapReadyCallback {
             updateBuildingCountText()
             for (building in buildings) {
                 val coordinates = LatLng(building.latitude, building.longitude)
-                googleMap.addMarker(MarkerOptions()
-                    .position(coordinates)
-                    .title(building.itemName))
+                googleMap.addMarker(
+                    MarkerOptions()
+                        .position(coordinates)
+                        .title(building.itemName)
+                        .icon(BitmapDescriptorFactory.defaultMarker(213f))
+                )
             }
         }
 
@@ -169,9 +176,12 @@ class HomeFragment : Fragment(R.layout.fragment_home), OnMapReadyCallback {
             updateDiningCountText()
             for (dining in dinings) {
                 val coordinates = LatLng(dining.latitude, dining.longitude)
-                googleMap.addMarker(MarkerOptions()
-                    .position(coordinates)
-                    .title(dining.itemName))
+                googleMap.addMarker(
+                    MarkerOptions()
+                        .position(coordinates)
+                        .title(dining.itemName)
+                        .icon(BitmapDescriptorFactory.defaultMarker(213f))
+                )
             }
         }
 
@@ -180,9 +190,12 @@ class HomeFragment : Fragment(R.layout.fragment_home), OnMapReadyCallback {
             updateResidenceCountText()
             for (residence in residences) {
                 val coordinates = LatLng(residence.latitude, residence.longitude)
-                googleMap.addMarker(MarkerOptions()
-                    .position(coordinates)
-                    .title(residence.itemName))
+                googleMap.addMarker(
+                    MarkerOptions()
+                        .position(coordinates)
+                        .title(residence.itemName)
+                        .icon(BitmapDescriptorFactory.defaultMarker(213f))
+                )
             }
         }
     }
