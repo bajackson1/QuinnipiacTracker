@@ -14,9 +14,9 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import edu.quinnipiac.quinnipiactracker.R
 import edu.quinnipiac.quinnipiactracker.data.images.BuildingImageAdapter
 import edu.quinnipiac.quinnipiactracker.data.images.DiningImageAdapter
-import edu.quinnipiac.quinnipiactracker.R
 import edu.quinnipiac.quinnipiactracker.data.images.ResidenceImageAdapter
 
 class InfoFragment : Fragment() {
@@ -47,7 +47,16 @@ class InfoFragment : Fragment() {
         // Set up the horizontally scrolling residence images
         val residenceImages = listOf(
             R.drawable.commons,
-            R.drawable.irma
+            R.drawable.complex,
+            R.drawable.dana,
+            R.drawable.hill,
+            R.drawable.irma,
+            R.drawable.larson,
+            R.drawable.ledges,
+            R.drawable.mountainview,
+            R.drawable.perl,
+            R.drawable.troup,
+            R.drawable.village
         )
 
         // Finding a RecyclerView in the layout
@@ -79,7 +88,16 @@ class InfoFragment : Fragment() {
         residenceImageAdapter = ResidenceImageAdapter(
             residenceImages,
             ::navigateToCommonsFragment,
-            ::navigateToIrmaFragment
+            ::navigateToComplexFragment,
+            ::navigateToDanaFragment,
+            ::navigateToHillFragment,
+            ::navigateToIrmaFragment,
+            ::navigateToLarsonFragment,
+            ::navigateToLedgesFragment,
+            ::navigateToMountainviewFragment,
+            ::navigateToPerlFragment,
+            ::navigateToTroupFragment,
+            ::navigateToVillageFragment
         )
 
         // Setting it as the RecyclerView adapter
@@ -135,8 +153,53 @@ class InfoFragment : Fragment() {
         findNavController().navigate(R.id.action_infoFragment_to_commonsFragment)
     }
 
+    // Function for Complex navigation
+    private fun navigateToComplexFragment() {
+        findNavController().navigate(R.id.action_infoFragment_to_complexFragment)
+    }
+
+    // Function for Dana navigation
+    private fun navigateToDanaFragment() {
+        findNavController().navigate(R.id.action_infoFragment_to_danaFragment)
+    }
+
+    // Function for Hill navigation
+    private fun navigateToHillFragment() {
+        findNavController().navigate(R.id.action_infoFragment_to_hillFragment)
+    }
+
     // Function for Irma navigation
     private fun navigateToIrmaFragment() {
         findNavController().navigate(R.id.action_infoFragment_to_irmaFragment)
+    }
+
+    // Function for Larson navigation
+    private fun navigateToLarsonFragment() {
+        findNavController().navigate(R.id.action_infoFragment_to_larsonFragment)
+    }
+
+    // Function for Ledges navigation
+    private fun navigateToLedgesFragment() {
+        findNavController().navigate(R.id.action_infoFragment_to_ledgesFragment)
+    }
+
+    // Function for Mountainview navigation
+    private fun navigateToMountainviewFragment() {
+        findNavController().navigate(R.id.action_infoFragment_to_mountainviewFragment)
+    }
+
+    // Function for Perl navigation
+    private fun navigateToPerlFragment() {
+        findNavController().navigate(R.id.action_infoFragment_to_perlFragment)
+    }
+
+    // Function for Troup navigation
+    private fun navigateToTroupFragment() {
+        findNavController().navigate(R.id.action_infoFragment_to_troupFragment)
+    }
+
+    // Function for Village navigation
+    private fun navigateToVillageFragment() {
+        findNavController().navigate(R.id.action_infoFragment_to_villageFragment)
     }
 }

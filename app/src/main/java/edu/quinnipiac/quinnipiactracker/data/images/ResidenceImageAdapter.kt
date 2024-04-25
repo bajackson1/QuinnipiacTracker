@@ -16,7 +16,16 @@ class ResidenceImageAdapter(
     private val residenceImages: List<Int>,
     // Click listeners for each building
     private val commonsClickListener: () -> Unit,
-    private val irmaClickListener: () -> Unit
+    private val complexClickListener: () -> Unit,
+    private val danaClickListener: () -> Unit,
+    private val hillClickListener: () -> Unit,
+    private val irmaClickListener: () -> Unit,
+    private val larsonClickListener: () -> Unit,
+    private val ledgesClickListener: () -> Unit,
+    private val mountainviewClickListener: () -> Unit,
+    private val perlClickListener: () -> Unit,
+    private val troupClickListener: () -> Unit,
+    private val villageClickListener: () -> Unit,
 ) : RecyclerView.Adapter<ResidenceImageAdapter.ViewHolder>() {
 
     // Represents a singular image in the view gallery
@@ -40,7 +49,16 @@ class ResidenceImageAdapter(
         holder.residenceImage.setOnClickListener {
             when (position) {
                 0 -> commonsClickListener()
-                1 -> irmaClickListener()
+                1 -> complexClickListener()
+                2 -> danaClickListener()
+                3 -> hillClickListener()
+                4 -> irmaClickListener()
+                5 -> larsonClickListener()
+                6 -> ledgesClickListener()
+                7 -> mountainviewClickListener()
+                8 -> perlClickListener()
+                9 -> troupClickListener()
+                10 -> villageClickListener()
             }
         }
     }

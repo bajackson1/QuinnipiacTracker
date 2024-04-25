@@ -10,7 +10,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
@@ -53,7 +52,16 @@ class FavsFragment : Fragment() {
         // Set up the horizontally scrolling residence images
         val residenceImages = listOf(
             R.drawable.commons,
-            R.drawable.irma
+            R.drawable.complex,
+            R.drawable.dana,
+            R.drawable.hill,
+            R.drawable.irma,
+            R.drawable.larson,
+            R.drawable.ledges,
+            R.drawable.mountainview,
+            R.drawable.perl,
+            R.drawable.troup,
+            R.drawable.village
         )
 
         // Finding a RecyclerView in the layout
@@ -84,7 +92,16 @@ class FavsFragment : Fragment() {
         residenceImageAdapter = ResidenceFavsAdapter(
             residenceImages,
             ::navigateToCommonsFragment,
-            ::navigateToIrmaFragment
+            ::navigateToComplexFragment,
+            ::navigateToDanaFragment,
+            ::navigateToHillFragment,
+            ::navigateToIrmaFragment,
+            ::navigateToLarsonFragment,
+            ::navigateToLedgesFragment,
+            ::navigateToMountainviewFragment,
+            ::navigateToPerlFragment,
+            ::navigateToTroupFragment,
+            ::navigateToVillageFragment,
         )
 
         // Setting it as the RecyclerView adapter
@@ -92,92 +109,101 @@ class FavsFragment : Fragment() {
         diningRecyclerView.adapter = diningImageAdapter
         residenceRecyclerView.adapter = residenceImageAdapter
 
-        // Finding the TextViews in the layout
-        val buildingFavsCountTextView = view.findViewById<TextView>(R.id.building_favs_count)
-        val diningFavsCountTextView = view.findViewById<TextView>(R.id.dining_favs_count)
-        val residenceFavsCountTextView = view.findViewById<TextView>(R.id.residence_favs_count)
-
-        // Observe the favoriteItems LiveData
-        sharedViewModel.favoriteItems.observe(viewLifecycleOwner) { favoriteItems ->
-            updateFavoriteItems(favoriteItems)
-            updateFavoriteItemsCount(
-                buildingFavsCountTextView,
-                diningFavsCountTextView,
-                residenceFavsCountTextView
-            )
-        }
-
         return view
-    }
-
-    private fun updateFavoriteItems(favoriteItems: List<Int>) {
-        // Update the BuildingFavsAdapter
-        buildingImageAdapter.updateFavoriteItems(favoriteItems)
-
-        // Update the DiningFavsAdapter
-        diningImageAdapter.updateFavoriteItems(favoriteItems)
-
-        // Update the ResidenceFavsAdapter
-        residenceImageAdapter.updateFavoriteItems(favoriteItems)
-    }
-
-    private fun updateFavoriteItemsCount(
-        buildingFavsCountTextView: TextView,
-        diningFavsCountTextView: TextView,
-        residenceFavsCountTextView: TextView
-    ) {
-        buildingFavsCountTextView.text = buildingImageAdapter.itemCount.toString()
-        diningFavsCountTextView.text = diningImageAdapter.itemCount.toString()
-        residenceFavsCountTextView.text = residenceImageAdapter.itemCount.toString()
     }
 
     // Function for CAS navigation
     private fun navigateToCasFragment() {
-        findNavController().navigate(R.id.action_infoFragment_to_casFragment)
+        findNavController().navigate(R.id.action_favsFragment_to_casFragment)
     }
 
     // Function for CCE navigation
     private fun navigateToCceFragment() {
-        findNavController().navigate(R.id.action_infoFragment_to_cceFragment)
+        findNavController().navigate(R.id.action_favsFragment_to_cceFragment)
     }
 
     // Function for Echlin navigation
     private fun navigateToEchlinFragment() {
-        findNavController().navigate(R.id.action_infoFragment_to_echlinFragment)
+        findNavController().navigate(R.id.action_favsFragment_to_echlinFragment)
     }
 
     // Function for Lender navigation
     private fun navigateToLenderFragment() {
-        findNavController().navigate(R.id.action_infoFragment_to_lenderFragment)
+        findNavController().navigate(R.id.action_favsFragment_to_lenderFragment)
     }
 
     // Function for library navigation
     private fun navigateToLibraryFragment() {
-        findNavController().navigate(R.id.action_infoFragment_to_libraryFragment)
+        findNavController().navigate(R.id.action_favsFragment_to_libraryFragment)
     }
 
     // Function for Tator navigation
     private fun navigateToTatorFragment() {
-        findNavController().navigate(R.id.action_infoFragment_to_tatorFragment)
+        findNavController().navigate(R.id.action_favsFragment_to_tatorFragment)
     }
 
     // Function for Student Center navigation
     private fun navigateToStudentCenterFragment() {
-        findNavController().navigate(R.id.action_infoFragment_to_studentCenterFragment)
+        findNavController().navigate(R.id.action_favsFragment_to_studentCenterFragment)
     }
 
     // Function for Rat navigation
     private fun navigateToRatFragment() {
-        findNavController().navigate(R.id.action_infoFragment_to_ratFragment)
+        findNavController().navigate(R.id.action_favsFragment_to_ratFragment)
     }
 
     // Function for Commons navigation
     private fun navigateToCommonsFragment() {
-        findNavController().navigate(R.id.action_infoFragment_to_commonsFragment)
+        findNavController().navigate(R.id.action_favsFragment_to_commonsFragment)
+    }
+
+    // Function for Complex navigation
+    private fun navigateToComplexFragment() {
+        findNavController().navigate(R.id.action_favsFragment_to_complexFragment)
+    }
+
+    // Function for Dana navigation
+    private fun navigateToDanaFragment() {
+        findNavController().navigate(R.id.action_favsFragment_to_danaFragment)
+    }
+
+    // Function for Hill navigation
+    private fun navigateToHillFragment() {
+        findNavController().navigate(R.id.action_favsFragment_to_hillFragment)
     }
 
     // Function for Irma navigation
     private fun navigateToIrmaFragment() {
         findNavController().navigate(R.id.action_infoFragment_to_irmaFragment)
+    }
+
+    // Function for Larson navigation
+    private fun navigateToLarsonFragment() {
+        findNavController().navigate(R.id.action_favsFragment_to_larsonFragment)
+    }
+
+    // Function for Ledges navigation
+    private fun navigateToLedgesFragment() {
+        findNavController().navigate(R.id.action_favsFragment_to_ledgesFragment)
+    }
+
+    // Function for Mountainview navigation
+    private fun navigateToMountainviewFragment() {
+        findNavController().navigate(R.id.action_favsFragment_to_mountainviewFragment)
+    }
+
+    // Function for Perl navigation
+    private fun navigateToPerlFragment() {
+        findNavController().navigate(R.id.action_favsFragment_to_perlFragment)
+    }
+
+    // Function for Troup navigation
+    private fun navigateToTroupFragment() {
+        findNavController().navigate(R.id.action_favsFragment_to_troupFragment)
+    }
+
+    // Function for Village navigation
+    private fun navigateToVillageFragment() {
+        findNavController().navigate(R.id.action_favsFragment_to_villageFragment)
     }
 }

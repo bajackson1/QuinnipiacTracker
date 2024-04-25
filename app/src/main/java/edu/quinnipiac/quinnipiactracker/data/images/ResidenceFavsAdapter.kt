@@ -12,9 +12,20 @@ import androidx.recyclerview.widget.RecyclerView
 import edu.quinnipiac.quinnipiactracker.R
 
 class ResidenceFavsAdapter(
+    // List of images to be displayed
     private val residenceFavs: List<Int>,
+    // Click listeners for each building
     private val commonsClickListener: () -> Unit,
-    private val irmaClickListener: () -> Unit
+    private val complexClickListener: () -> Unit,
+    private val danaClickListener: () -> Unit,
+    private val hillClickListener: () -> Unit,
+    private val irmaClickListener: () -> Unit,
+    private val larsonClickListener: () -> Unit,
+    private val ledgesClickListener: () -> Unit,
+    private val mountainviewClickListener: () -> Unit,
+    private val perlClickListener: () -> Unit,
+    private val troupClickListener: () -> Unit,
+    private val villageClickListener: () -> Unit,
 ) : RecyclerView.Adapter<ResidenceFavsAdapter.ViewHolder>() {
     private val favoriteItems = mutableListOf<Int>()
 
@@ -32,10 +43,20 @@ class ResidenceFavsAdapter(
         holder.residenceImage.setImageResource(residenceFavs[position])
         holder.residenceImage.visibility = if (favoriteItems.contains(residenceFavs[position])) View.VISIBLE else View.INVISIBLE
 
+        // Setting the click listener for each image based on its position in the view
         holder.residenceImage.setOnClickListener {
             when (position) {
                 0 -> commonsClickListener()
-                1 -> irmaClickListener()
+                1 -> complexClickListener()
+                2 -> danaClickListener()
+                3 -> hillClickListener()
+                4 -> irmaClickListener()
+                5 -> larsonClickListener()
+                6 -> ledgesClickListener()
+                7 -> mountainviewClickListener()
+                8 -> perlClickListener()
+                9 -> troupClickListener()
+                10 -> villageClickListener()
             }
         }
     }

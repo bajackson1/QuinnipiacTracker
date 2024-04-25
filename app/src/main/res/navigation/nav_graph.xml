@@ -63,6 +63,33 @@
         <action
             android:id="@+id/action_infoFragment_to_irmaFragment"
             app:destination="@id/irmaFragment" />
+        <action
+            android:id="@+id/action_infoFragment_to_villageFragment"
+            app:destination="@id/villageFragment" />
+        <action
+            android:id="@+id/action_infoFragment_to_complexFragment"
+            app:destination="@id/complexFragment" />
+        <action
+            android:id="@+id/action_infoFragment_to_mountainviewFragment"
+            app:destination="@id/mountainviewFragment" />
+        <action
+            android:id="@+id/action_infoFragment_to_ledgesFragment"
+            app:destination="@id/ledgesFragment" />
+        <action
+            android:id="@+id/action_infoFragment_to_danaFragment"
+            app:destination="@id/danaFragment" />
+        <action
+            android:id="@+id/action_infoFragment_to_hillFragment"
+            app:destination="@id/hillFragment" />
+        <action
+            android:id="@+id/action_infoFragment_to_perlFragment"
+            app:destination="@id/perlFragment" />
+        <action
+            android:id="@+id/action_infoFragment_to_troupFragment"
+            app:destination="@id/troupFragment" />
+        <action
+            android:id="@+id/action_infoFragment_to_larsonFragment"
+            app:destination="@id/larsonFragment" />
     </fragment>
 
     <!--Favs Fragment-->
@@ -104,6 +131,33 @@
         <action
             android:id="@+id/action_favsFragment_to_cceFragment"
             app:destination="@id/cceFragment" />
+        <action
+            android:id="@+id/action_favsFragment_to_villageFragment"
+            app:destination="@id/villageFragment" />
+        <action
+            android:id="@+id/action_favsFragment_to_complexFragment"
+            app:destination="@id/complexFragment" />
+        <action
+            android:id="@+id/action_favsFragment_to_mountainviewFragment"
+            app:destination="@id/mountainviewFragment" />
+        <action
+            android:id="@+id/action_favsFragment_to_ledgesFragment"
+            app:destination="@id/ledgesFragment" />
+        <action
+            android:id="@+id/action_favsFragment_to_danaFragment"
+            app:destination="@id/danaFragment" />
+        <action
+            android:id="@+id/action_favsFragment_to_hillFragment"
+            app:destination="@id/hillFragment" />
+        <action
+            android:id="@+id/action_favsFragment_to_perlFragment"
+            app:destination="@id/perlFragment" />
+        <action
+            android:id="@+id/action_favsFragment_to_troupFragment"
+            app:destination="@id/troupFragment" />
+        <action
+            android:id="@+id/action_favsFragment_to_larsonFragment"
+            app:destination="@id/larsonFragment" />
     </fragment>
 
     <!--Help Fragment-->
@@ -118,7 +172,7 @@
         android:id="@+id/casFragment"
         android:name="edu.quinnipiac.quinnipiactracker.buildings.academic.CasFragment"
         android:label="CasFragment">
-        <!--Action to go back to Info Fragment-->
+        <!--Action to go back-->
         <action
             android:id="@+id/action_casFragment_to_infoFragment"
             app:destination="@id/infoFragment"/>
@@ -132,7 +186,7 @@
         android:id="@+id/cceFragment"
         android:name="edu.quinnipiac.quinnipiactracker.buildings.academic.CceFragment"
         android:label="CceFragment">
-        <!--Action to go back to Info Fragment-->
+        <!--Action to go back-->
         <action
             android:id="@+id/action_cceFragment_to_infoFragment"
             app:destination="@id/infoFragment"/>
@@ -146,7 +200,7 @@
         android:id="@+id/echlinFragment"
         android:name="edu.quinnipiac.quinnipiactracker.buildings.academic.EchlinFragment"
         android:label="EchlinFragment">
-        <!--Action to go back to Info Fragment-->
+        <!--Action to go back-->
         <action
             android:id="@+id/action_echlinFragment_to_infoFragment"
             app:destination="@id/infoFragment"/>
@@ -160,7 +214,7 @@
         android:id="@+id/lenderFragment"
         android:name="edu.quinnipiac.quinnipiactracker.buildings.academic.LenderFragment"
         android:label="LenderFragment">
-        <!--Action to go back to Info Fragment-->
+        <!--Action to go back-->
         <action
             android:id="@+id/action_lenderFragment_to_infoFragment"
             app:destination="@id/infoFragment"/>
@@ -319,6 +373,132 @@
             app:destination="@id/infoFragment" />
         <action
             android:id="@+id/action_irmaFragment_to_favsFragment"
+            app:destination="@id/favsFragment" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/villageFragment"
+        android:name="edu.quinnipiac.quinnipiactracker.buildings.residence.VillageFragment"
+        android:label="fragment_village"
+        tools:layout="@layout/fragment_village" >
+        <action
+            android:id="@+id/action_villageFragment_to_infoFragment"
+            app:destination="@id/infoFragment" />
+        <action
+            android:id="@+id/action_villageFragment_to_favsFragment"
+            app:destination="@id/favsFragment" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/complexFragment"
+        android:name="edu.quinnipiac.quinnipiactracker.buildings.residence.ComplexFragment"
+        android:label="fragment_complex"
+        tools:layout="@layout/fragment_complex" >
+        <action
+            android:id="@+id/action_complexFragment_to_infoFragment"
+            app:destination="@id/infoFragment" />
+        <action
+            android:id="@+id/action_complexFragment_to_favsFragment"
+            app:destination="@id/favsFragment" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/danaFragment"
+        android:name="edu.quinnipiac.quinnipiactracker.buildings.residence.DanaFragment"
+        android:label="fragment_dana"
+        tools:layout="@layout/fragment_dana" >
+        <action
+            android:id="@+id/action_danaFragment_to_infoFragment"
+            app:destination="@id/infoFragment" />
+        <action
+            android:id="@+id/action_danaFragment_to_favsFragment"
+            app:destination="@id/favsFragment" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/hillFragment"
+        android:name="edu.quinnipiac.quinnipiactracker.buildings.residence.HillFragment"
+        android:label="fragment_hill"
+        tools:layout="@layout/fragment_hill" >
+        <action
+            android:id="@+id/action_hillFragment_to_infoFragment"
+            app:destination="@id/infoFragment" />
+        <action
+            android:id="@+id/action_hillFragment_to_favsFragment"
+            app:destination="@id/favsFragment" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/larsonFragment"
+        android:name="edu.quinnipiac.quinnipiactracker.buildings.residence.LarsonFragment"
+        android:label="fragment_larson"
+        tools:layout="@layout/fragment_larson" >
+        <action
+            android:id="@+id/action_larsonFragment_to_infoFragment"
+            app:destination="@id/infoFragment" />
+        <action
+            android:id="@+id/action_larsonFragment_to_favsFragment"
+            app:destination="@id/favsFragment" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/ledgesFragment"
+        android:name="edu.quinnipiac.quinnipiactracker.buildings.residence.LedgesFragment"
+        android:label="fragment_ledges"
+        tools:layout="@layout/fragment_ledges" >
+        <action
+            android:id="@+id/action_ledgesFragment_to_infoFragment"
+            app:destination="@id/infoFragment" />
+        <action
+            android:id="@+id/action_ledgesFragment_to_favsFragment"
+            app:destination="@id/favsFragment" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/mountainviewFragment"
+        android:name="edu.quinnipiac.quinnipiactracker.buildings.residence.MountainviewFragment"
+        android:label="fragment_mountainview"
+        tools:layout="@layout/fragment_mountainview" >
+        <action
+            android:id="@+id/action_mountainviewFragment_to_infoFragment"
+            app:destination="@id/infoFragment" />
+        <action
+            android:id="@+id/action_mountainviewFragment_to_favsFragment"
+            app:destination="@id/favsFragment" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/perlFragment"
+        android:name="edu.quinnipiac.quinnipiactracker.buildings.residence.PerlFragment"
+        android:label="fragment_perl"
+        tools:layout="@layout/fragment_perl" >
+        <action
+            android:id="@+id/action_perlFragment_to_infoFragment"
+            app:destination="@id/infoFragment" />
+        <action
+            android:id="@+id/action_perlFragment_to_favsFragment"
+            app:destination="@id/favsFragment" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/troupFragment"
+        android:name="edu.quinnipiac.quinnipiactracker.buildings.residence.TroupFragment"
+        android:label="fragment_troup"
+        tools:layout="@layout/fragment_troup" >
+        <action
+            android:id="@+id/action_troupFragment_to_infoFragment"
+            app:destination="@id/infoFragment" />
+        <action
+            android:id="@+id/action_troupFragment_to_favsFragment"
             app:destination="@id/favsFragment" />
     </fragment>
 

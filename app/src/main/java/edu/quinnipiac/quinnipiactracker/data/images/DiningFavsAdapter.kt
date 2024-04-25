@@ -41,10 +41,4 @@ class DiningFavsAdapter(
     }
 
     override fun getItemCount() = diningFavs.size
-
-    fun updateFavoriteItems(newFavoriteItems: List<Int>) {
-        favoriteItems.clear()
-        favoriteItems.addAll(newFavoriteItems)
-        notifyDataSetChanged()
-    }
 }

@@ -21,19 +21,13 @@ class DiningAddFragment : Fragment() {
     private val binding get() = _binding!!
 
     private val presetDiningTitles = listOf(
-        "Cafe",
-        "Cafeteria",
-        "Dining Hall",
-        "Food Court",
-        "Snack Bar"
+        "Student Center",
+        "Bobcat Den/The Rat"
     )
 
     private val presetDiningCoordinates: Map<String, LatLng> = mapOf(
-        "Cafe" to LatLng(41.41883927955504, -72.89416933310599),
-        "Cafeteria" to LatLng(41.415613766167226, -72.89486382827572),
-        "Dining Hall" to LatLng(41.41950915640872, -72.89738883168646),
-        "Food Court" to LatLng(41.4183663748876, -72.89706751864954),
-        "Snack Bar" to LatLng(41.41955243718745, -72.89511512264953)
+        "Student Center" to LatLng(41.418170208397335, -72.89490294911462),
+        "Bobcat Den/The Rat" to LatLng(41.41875670802813, -72.89178587199964)
     )
 
     private lateinit var diningViewModel: DiningViewModel

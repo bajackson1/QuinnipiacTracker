@@ -49,10 +49,4 @@ class BuildingFavsAdapter(
     }
 
     override fun getItemCount() = buildingImages.size
-
-    fun updateFavoriteItems(newFavoriteItems: List<Int>) {
-        favoriteItems.clear()
-        favoriteItems.addAll(newFavoriteItems)
-        notifyDataSetChanged()
-    }
 }
