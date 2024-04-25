@@ -40,7 +40,7 @@
             tools:ignore="ContentDescription" />
 
         <ImageView
-            android:id="@+id/cas_image"
+            android:id="@+id/larson_image"
             android:layout_width="0dp"
             android:layout_height="300dp"
             android:layout_marginStart="4dp"
@@ -54,7 +54,7 @@
             app:layout_constraintTop_toBottomOf="@+id/back_button" />
 
         <TextView
-            android:id="@+id/cas_description"
+            android:id="@+id/larson_description"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="4dp"
@@ -68,7 +68,149 @@
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/cas_image" />
+            app:layout_constraintTop_toBottomOf="@+id/larson_image" />
+
+        <LinearLayout
+            android:id="@+id/style_group"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/box_outline"
+            android:orientation="horizontal"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="4dp"
+            android:padding="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/larson_description">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/style"
+                android:textSize="16sp"
+                android:textColor="@color/QUnavy"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/style_type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/suite"
+                android:textSize="16sp"
+                android:textColor="@color/QUnavy"
+                android:textStyle="bold"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/suites_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/box_outline"
+            android:orientation="horizontal"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="4dp"
+            android:padding="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/style_group">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/residents_per_room"
+                android:textSize="16sp"
+                android:textColor="@color/QUnavy"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/suites_layout_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/_2_4_doubles"
+                android:textSize="16sp"
+                android:textColor="@color/QUnavy"
+                android:textStyle="bold"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/bedroom_dimensions_group"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/box_outline"
+            android:orientation="vertical"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="4dp" android:padding="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/suites_layout">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/bedroom_dimensions"
+                    android:textSize="16sp"
+                    android:textColor="@color/QUnavy"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/suites_dimensions_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/_11_5_quot_x_13_8_quot"
+                    android:textSize="16sp"
+                    android:textColor="@color/QUnavy"
+                    android:textStyle="bold"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ac_group"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/box_outline"
+            android:orientation="horizontal"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="4dp"
+            android:padding="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/bedroom_dimensions_group">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/ac_yes_no"
+                android:textSize="16sp"
+                android:textColor="@color/QUnavy"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/ac_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/yes"
+                android:textSize="16sp"
+                android:textColor="@color/QUnavy"
+                android:textStyle="bold"/>
+
+        </LinearLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
