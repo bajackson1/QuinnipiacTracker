@@ -17,6 +17,8 @@ import androidx.recyclerview.widget.RecyclerView
 
 class InfoFragment : Fragment() {
     private lateinit var buildingImageAdapter: BuildingImageAdapter
+    private lateinit var diningImageAdapter: DiningImageAdapter
+    private lateinit var residenceImageAdapter: ResidenceImageAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -33,12 +35,26 @@ class InfoFragment : Fragment() {
             R.drawable.library,
             R.drawable.tator
         )
+        // Set up the horizontally scrolling dining images
+        val diningImages = listOf(
+            R.drawable.caf,
+            R.drawable.rat
+        )
+        // Set up the horizontally scrolling residence images
+        val residenceImages = listOf(
+            R.drawable.commons,
+            R.drawable.irma
+        )
 
         // Finding a RecyclerView in the layout
-        val recyclerView = view.findViewById<RecyclerView>(R.id.building_images_recycler_view)
+        val buildingRecyclerView = view.findViewById<RecyclerView>(R.id.building_images_recycler_view)
+        val diningRecyclerView = view.findViewById<RecyclerView>(R.id.dining_images_recycler_view)
+        val residenceRecyclerView = view.findViewById<RecyclerView>(R.id.residence_images_recycler_view)
 
         // Making the layout of the RecyclerView a horizontal LinearLayoutManager
-        recyclerView.layoutManager = LinearLayoutManager(requireContext(), RecyclerView.HORIZONTAL, false)
+        buildingRecyclerView.layoutManager = LinearLayoutManager(requireContext(), RecyclerView.HORIZONTAL, false)
+        diningRecyclerView.layoutManager = LinearLayoutManager(requireContext(), RecyclerView.HORIZONTAL, false)
+        residenceRecyclerView.layoutManager = LinearLayoutManager(requireContext(), RecyclerView.HORIZONTAL, false)
 
         // Creating an instance of the BuildingImageAdapter class
         buildingImageAdapter = BuildingImageAdapter(
@@ -50,8 +66,22 @@ class InfoFragment : Fragment() {
             ::navigateToLibraryFragment,
             ::navigateToTatorFragment
         )
+        diningImageAdapter = DiningImageAdapter(
+            diningImages,
+            ::navigateToStudentCenterFragment,
+            ::navigateToRatFragment
+
+        )
+        residenceImageAdapter = ResidenceImageAdapter(
+            residenceImages,
+            ::navigateToCommonsFragment,
+            ::navigateToIrmaFragment
+        )
+
         // Setting it as the RecyclerView adapter
-        recyclerView.adapter = buildingImageAdapter
+        buildingRecyclerView.adapter = buildingImageAdapter
+        diningRecyclerView.adapter = diningImageAdapter
+        residenceRecyclerView.adapter = residenceImageAdapter
 
         return view
     }
@@ -84,5 +114,25 @@ class InfoFragment : Fragment() {
     // Function for Tator navigation
     private fun navigateToTatorFragment() {
         findNavController().navigate(R.id.action_infoFragment_to_tatorFragment)
+    }
+
+    // Function for Student Center navigation
+    private fun navigateToStudentCenterFragment() {
+        findNavController().navigate(R.id.action_infoFragment_to_studentCenterFragment)
+    }
+
+    // Function for Rat navigation
+    private fun navigateToRatFragment() {
+        findNavController().navigate(R.id.action_infoFragment_to_ratFragment)
+    }
+
+    // Function for Commons navigation
+    private fun navigateToCommonsFragment() {
+        findNavController().navigate(R.id.action_infoFragment_to_commonsFragment)
+    }
+
+    // Function for Irma navigation
+    private fun navigateToIrmaFragment() {
+        findNavController().navigate(R.id.action_infoFragment_to_irmaFragment)
     }
 }

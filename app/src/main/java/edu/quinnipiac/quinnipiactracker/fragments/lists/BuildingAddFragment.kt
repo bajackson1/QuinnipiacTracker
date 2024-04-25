@@ -39,6 +39,7 @@ class BuildingAddFragment : Fragment() {
     )
 
     private lateinit var buildingViewModel: BuildingViewModel
+    private val existingBuildingTitles = mutableSetOf<String>()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -51,15 +52,33 @@ class BuildingAddFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // Initialize the BuildingViewModel
         buildingViewModel = ViewModelProvider(this, BuildingViewModelFactory(BuildingRoomDatabase.getDatabase(requireContext()).buildingDao()))[BuildingViewModel::class.java]
+
+        buildingViewModel.allBuildings.observe(viewLifecycleOwner) { buildings ->
+            existingBuildingTitles.clear()
+            buildings.forEach { building ->
+                existingBuildingTitles.add(building.itemName)
+            }
+        }
 
         val adapter = ArrayAdapter(requireContext(), android.R.layout.simple_dropdown_item_1line, presetBuildingTitles)
         binding.addBuildingTitle.setAdapter(adapter)
 
         binding.saveBuildingName.setOnClickListener {
-            val buildingTitle = binding.addBuildingTitle.text.toString()
-            if (presetBuildingTitles.contains(buildingTitle)) {
+            addBuilding()
+        }
+
+        binding.cancelBuilding.setOnClickListener {
+            findNavController().navigateUp()
+        }
+    }
+
+    private fun addBuilding() {
+        val buildingTitle = binding.addBuildingTitle.text.toString()
+        if (presetBuildingTitles.contains(buildingTitle)) {
+            if (existingBuildingTitles.contains(buildingTitle)) {
+                binding.addBuildingTitle.error = "You have already visited this building."
+            } else {
                 val coordinates = presetBuildingCoordinates[buildingTitle]
                 if (coordinates != null) {
                     val newBuilding = Building(
@@ -68,13 +87,14 @@ class BuildingAddFragment : Fragment() {
                         longitude = coordinates.longitude
                     )
                     buildingViewModel.addNewBuilding(newBuilding)
+                    existingBuildingTitles.add(buildingTitle)
                     findNavController().navigate(R.id.action_buildingAddFragment_to_buildingHomeFragment)
                 } else {
                     binding.addBuildingTitle.error = "Please select a valid building title from the list."
                 }
-            } else {
-                binding.addBuildingTitle.error = "Please select a valid building title from the list."
             }
+        } else {
+            binding.addBuildingTitle.error = "Please select a valid building title from the list."
         }
     }
 

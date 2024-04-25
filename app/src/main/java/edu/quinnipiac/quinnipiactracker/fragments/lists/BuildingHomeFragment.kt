@@ -36,7 +36,10 @@ class BuildingHomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        buildingAdapter = BuildingAdapter(buildings)
+        buildingAdapter = BuildingAdapter(buildings) { building ->
+            val viewModel = ViewModelProvider(this, BuildingViewModelFactory(BuildingRoomDatabase.getDatabase(requireContext()).buildingDao()))[BuildingViewModel::class.java]
+            viewModel.deleteBuilding(building)
+        }
         binding.buildingRecyclerView.adapter = buildingAdapter
         binding.buildingRecyclerView.layoutManager = LinearLayoutManager(requireContext())
 
@@ -45,16 +48,18 @@ class BuildingHomeFragment : Fragment() {
         }
 
         binding.backButton.setOnClickListener {
-            findNavController().navigate(R.id.action_buildingHomeFragment_to_homeFragment)
+            findNavController().navigateUp()
         }
 
-        // Observe the buildings from the ViewModel and update the adapter
         val viewModel = ViewModelProvider(this, BuildingViewModelFactory(BuildingRoomDatabase.getDatabase(requireContext()).buildingDao()))[BuildingViewModel::class.java]
         viewModel.allBuildings.observe(viewLifecycleOwner) { updatedBuildings ->
             buildings.clear()
             buildings.addAll(updatedBuildings)
             buildingAdapter.notifyDataSetChanged()
         }
+
+        binding.logoImageView.visibility = if (buildings.isNotEmpty()) View.GONE else View.VISIBLE
+        binding.logoTextView.visibility = if (buildings.isNotEmpty()) View.GONE else View.VISIBLE
     }
 
     override fun onDestroyView() {
