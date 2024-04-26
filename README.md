@@ -12,7 +12,7 @@ git clone https://github.com/bajackson1/QuinnipiacTracker.git
 
 Open the folder in Android Studio, build it, and run it on an emulator or a physical device.
 
-<img align="left" src=".github/images/homeScreen.png" width="22.5%" height="22.5%"><img align="left" src=".github/images/infoScreen.png" width="23%" height="22.5%"><img align="left" src=".github/images/homeScreen.png" width="22.5%" height="22.5%"><img align="left" src=".github/images/infoScreen.png" width="22.5%" height="22.5%"></br></br></br></br></br></br></br></br></br></br></br>
+<img align="left" src=".github/images/homeScreen.png" width="22.5%" height="22.5%"><img align="left" src=".github/images/infoScreen.png" width="22.5%" height="22.5%"><img align="left" src=".github/images/homeScreen.png" width="22.5%" height="22.5%"><img align="left" src=".github/images/infoScreen.png" width="22.5%" height="22.5%"></br></br></br></br></br></br></br></br></br></br></br>
 
 ### Prerequisites
 
