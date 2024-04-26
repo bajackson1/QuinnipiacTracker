@@ -7,19 +7,19 @@ An Android app for information and location journaling at Quinnipiac University.
 <div style="margin-bottom: 20px;">
     <figure>
         <img align="left" src=".github/images/homeScreen.png" width="22.5%" height="22.5%">
-        <figcaption></figcaption>
+        <figcaption> </figcaption>
     </figure>
     <figure>
         <img align="left" src=".github/images/infoScreen.png" width="22.5%" height="22.5%">
-        <figcaption></figcaption>
+        <figcaption> </figcaption>
     </figure>
     <figure>
         <img align="left" src=".github/images/favsScreen.png" width="22.5%" height="22.5%">
-        <figcaption></figcaption>
+        <figcaption> </figcaption>
     </figure>
     <figure>
         <img align="left" src=".github/images/homeScreen.png" width="22.5%" height="22.5%">
-        <figcaption></figcaption>
+        <figcaption> </figcaption>
     </figure>
 </div>
 
