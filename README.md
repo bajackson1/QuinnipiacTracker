@@ -2,11 +2,17 @@
 
 An Android app for information and location journaling at Quinnipiac University. The final project for the SER210 Android development class.
 
-<img align="left" src=".github/images/homeScreen.png" width="22.5%" height="22.5%"><img align="left" src=".github/images/infoScreen.png" width="22.5%" height="22.5%"><img align="left" src=".github/images/homeScreen.png" width="22.5%" height="22.5%"><img align="left" src=".github/images/infoScreen.png" width="22.5%" height="22.5%"></br></br></br></br></br></br></br></br></br></br>
+<img align="left" src=".github/images/homeScreen.png" width="22.5%" height="22.5%"><img align="left" src=".github/images/infoScreen.png" width="22.5%" height="22.5%"><img align="left" src=".github/images/homeScreen.png" width="22.5%" height="22.5%"><img align="left" src=".github/images/infoScreen.png" width="22.5%" height="22.5%"></br></br></br></br></br></br></br></br></br></br></br>
 
 ## Getting Started
 
-To get started, clone this repository to your local machine:
+### Android App Store
+
+Upon the final updates to the first version of the app, we will be publishing QuinnipiacTracker to the Android App Store. Stay tuned for updates!
+
+### Source Code
+
+If you want to work with the source code instead, clone this repository to your local machine:
 
 ```bash
 git clone https://github.com/bajackson1/QuinnipiacTracker.git
@@ -14,7 +20,7 @@ git clone https://github.com/bajackson1/QuinnipiacTracker.git
 
 Open the folder in Android Studio, build it, and run it on an emulator or a physical device.
 
-### Prerequisites
+#### Prerequisites
 
 - Android Studio
 - Android SDK
