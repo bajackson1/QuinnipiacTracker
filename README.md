@@ -2,6 +2,8 @@
 
 An Android app for information and location journaling at Quinnipiac University. The final project for the SER210 Android development class.
 
+<img align="left" src=".github/images/homeScreen.png" width="22.5%" height="22.5%"><img align="left" src=".github/images/infoScreen.png" width="22.5%" height="22.5%"><img align="left" src=".github/images/homeScreen.png" width="22.5%" height="22.5%"><img align="left" src=".github/images/infoScreen.png" width="22.5%" height="22.5%"></br></br></br></br></br></br></br></br></br></br>
+
 ## Getting Started
 
 To get started, clone this repository to your local machine:
@@ -11,8 +13,6 @@ git clone https://github.com/bajackson1/QuinnipiacTracker.git
 ```
 
 Open the folder in Android Studio, build it, and run it on an emulator or a physical device.
-
-<img align="left" src=".github/images/homeScreen.png" width="22.5%" height="22.5%"><img align="left" src=".github/images/infoScreen.png" width="22.5%" height="22.5%"><img align="left" src=".github/images/homeScreen.png" width="22.5%" height="22.5%"><img align="left" src=".github/images/infoScreen.png" width="22.5%" height="22.5%"></br></br></br></br></br></br></br></br></br></br></br>
 
 ### Prerequisites
 
