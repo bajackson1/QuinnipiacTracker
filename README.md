@@ -12,6 +12,8 @@ git clone https://github.com/bajackson1/QuinnipiacTracker.git
 
 Open the folder in Android Studio, build it, and run it on an emulator or a physical device.
 
+![homeScreen](/.github/images/homeScreen.png "homeScreen") ![infoScreen](/.github/images//infoScreen.png "infoScreen")
+
 ### Prerequisites
 
 - Android Studio
