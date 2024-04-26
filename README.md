@@ -5,12 +5,23 @@ An Android app for information and location journaling at Quinnipiac University.
 ## Screenshots
 
 <div style="margin-bottom: 20px;">
-    <img align="left" src=".github/images/homeScreen.png" width="22.5%" height="22.5%">
-    <img align="left" src=".github/images/infoScreen.png" width="22.5%" height="22.5%">
-    <img align="left" src=".github/images/homeScreen.png" width="22.5%" height="22.5%">
-    <img align="left" src=".github/images/infoScreen.png" width="22.5%" height="22.5%">
+    <figure>
+        <img align="left" src=".github/images/homeScreen.png" width="22.5%" height="22.5%">
+        <figcaption>Home Screen</figcaption>
+    </figure>
+    <figure>
+        <img align="left" src=".github/images/infoScreen.png" width="22.5%" height="22.5%">
+        <figcaption>Info Screen</figcaption>
+    </figure>
+    <figure>
+        <img align="left" src=".github/images/favsScreen.png" width="22.5%" height="22.5%">
+        <figcaption>Favs Screen</figcaption>
+    </figure>
+    <figure>
+        <img align="left" src=".github/images/homeScreen.png" width="22.5%" height="22.5%">
+        <figcaption>Help Screen</figcaption>
+    </figure>
 </div>
-<div style="height: 30px;"></div> 
 
 ## Getting Started
 
