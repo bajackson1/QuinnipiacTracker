@@ -9,11 +9,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import edu.quinnipiac.quinnipiactracker.R
-import edu.quinnipiac.quinnipiactracker.data.images.BuildingImage
+import edu.quinnipiac.quinnipiactracker.data.images.ResidenceImage
 import edu.quinnipiac.quinnipiactracker.data.images.SharedViewModel
 
 class LedgesFragment : Fragment() {
@@ -42,12 +43,20 @@ class LedgesFragment : Fragment() {
 
         // Favorite button function
         favoriteButton.setOnClickListener {
-            val casImage = BuildingImage(
+            val ledgesImage = ResidenceImage(
                 id = R.drawable.ledges,
                 imageUrl = "https://example.com/ledges.jpg",
                 title = "Ledges Building"
             )
-            sharedViewModel.addBuildingFav(casImage)
+
+            // Check if the building is already a favorite
+            if (sharedViewModel.isResidenceFav(ledgesImage)) {
+                sharedViewModel.removeResidenceFav(ledgesImage)
+                Toast.makeText(requireContext(), "Removed from favorites", Toast.LENGTH_SHORT).show()
+            } else {
+                sharedViewModel.addResidenceFav(ledgesImage)
+                Toast.makeText(requireContext(), "Added to favorites", Toast.LENGTH_SHORT).show()
+            }
         }
 
         return view

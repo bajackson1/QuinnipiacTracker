@@ -9,6 +9,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
@@ -47,7 +48,15 @@ class VillageFragment : Fragment() {
                 imageUrl = "https://example.com/village.jpg",
                 title = "Village Building"
             )
-            sharedViewModel.addResidenceFav(villageImage)
+
+            // Check if the building is already a favorite
+            if (sharedViewModel.isResidenceFav(villageImage)) {
+                sharedViewModel.removeResidenceFav(villageImage)
+                Toast.makeText(requireContext(), "Removed from favorites", Toast.LENGTH_SHORT).show()
+            } else {
+                sharedViewModel.addResidenceFav(villageImage)
+                Toast.makeText(requireContext(), "Added to favorites", Toast.LENGTH_SHORT).show()
+            }
         }
 
         return view

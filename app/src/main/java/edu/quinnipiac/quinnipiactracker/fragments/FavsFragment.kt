@@ -27,9 +27,6 @@ class FavsFragment : Fragment() {
     private lateinit var diningImageAdapter: DiningFavsAdapter
     private lateinit var residenceImageAdapter: ResidenceFavsAdapter
     private lateinit var sharedViewModel: SharedViewModel
-    private var buildingFavsCount: Int = 0
-    private var diningFavsCount: Int = 0
-    private var residenceFavsCount: Int = 0
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -45,29 +42,9 @@ class FavsFragment : Fragment() {
         val residenceRecyclerView = view.findViewById<RecyclerView>(R.id.residence_favs_recycler_view)
 
         // Set the visibility of the RecyclerViews based on the data in the SharedViewModel
-        if (sharedViewModel.buildingFavs.isNotEmpty()) {
-            buildingRecyclerView.visibility = View.VISIBLE
-            buildingFavsCount = sharedViewModel.buildingFavs.size
-            updateBuildingFavsCountText()
-        } else {
-            buildingRecyclerView.visibility = View.GONE
-        }
-
-        if (sharedViewModel.diningFavs.isNotEmpty()) {
-            diningRecyclerView.visibility = View.VISIBLE
-            diningFavsCount = sharedViewModel.diningFavs.size
-            updateDiningFavsCountText()
-        } else {
-            diningRecyclerView.visibility = View.GONE
-        }
-
-        if (sharedViewModel.residenceFavs.isNotEmpty()) {
-            residenceRecyclerView.visibility = View.VISIBLE
-            residenceFavsCount = sharedViewModel.residenceFavs.size
-            updateResidenceFavsCountText()
-        } else {
-            residenceRecyclerView.visibility = View.GONE
-        }
+        updateRecyclerViewVisibility(buildingRecyclerView, sharedViewModel.buildingFavs, ::updateBuildingFavsCountText)
+        updateRecyclerViewVisibility(diningRecyclerView, sharedViewModel.diningFavs, ::updateDiningFavsCountText)
+        updateRecyclerViewVisibility(residenceRecyclerView, sharedViewModel.residenceFavs, ::updateResidenceFavsCountText)
 
         // Make the layout of the RecyclerViews a horizontal LinearLayoutManager
         buildingRecyclerView.layoutManager = LinearLayoutManager(requireContext(), RecyclerView.HORIZONTAL, false)
@@ -225,18 +202,31 @@ class FavsFragment : Fragment() {
         findNavController().navigate(R.id.action_favsFragment_to_villageFragment)
     }
 
+    private fun updateRecyclerViewVisibility(
+        recyclerView: RecyclerView,
+        favList: List<Pair<Int, *>>,
+        updateCountText: () -> Unit
+    ) {
+        if (favList.isNotEmpty()) {
+            recyclerView.visibility = View.VISIBLE
+            updateCountText()
+        } else {
+            recyclerView.visibility = View.GONE
+        }
+    }
+
     private fun updateBuildingFavsCountText() {
         val buildingFavsCountTextView = view?.findViewById<TextView>(R.id.building_favs_count)
-        buildingFavsCountTextView?.text = buildingFavsCount.toString()
+        buildingFavsCountTextView?.text = sharedViewModel.buildingFavsCount.value.toString()
     }
 
     private fun updateDiningFavsCountText() {
         val diningFavsCountTextView = view?.findViewById<TextView>(R.id.dining_favs_count)
-        diningFavsCountTextView?.text = diningFavsCount.toString()
+        diningFavsCountTextView?.text = sharedViewModel.diningFavsCount.value.toString()
     }
 
     private fun updateResidenceFavsCountText() {
         val residenceFavsCountTextView = view?.findViewById<TextView>(R.id.residence_favs_count)
-        residenceFavsCountTextView?.text = residenceFavsCount.toString()
+        residenceFavsCountTextView?.text = sharedViewModel.residenceFavsCount.value.toString()
     }
 }

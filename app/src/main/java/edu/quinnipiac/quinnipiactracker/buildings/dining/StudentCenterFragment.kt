@@ -9,6 +9,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
@@ -45,9 +46,17 @@ class StudentCenterFragment : Fragment() {
             val cafImage = DiningImage(
                 id = R.drawable.caf,
                 imageUrl = "https://example.com/caf.jpg",
-                title = "Caf Building"
+                title = "Caf"
             )
-            sharedViewModel.addDiningFav(cafImage)
+
+            // Check if the building is already a favorite
+            if (sharedViewModel.isDiningFav(cafImage)) {
+                sharedViewModel.removeDiningFav(cafImage)
+                Toast.makeText(requireContext(), "Removed from favorites", Toast.LENGTH_SHORT).show()
+            } else {
+                sharedViewModel.addDiningFav(cafImage)
+                Toast.makeText(requireContext(), "Added to favorites", Toast.LENGTH_SHORT).show()
+            }
         }
 
         return view

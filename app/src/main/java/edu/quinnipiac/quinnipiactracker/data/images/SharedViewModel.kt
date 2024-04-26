@@ -54,4 +54,43 @@ class SharedViewModel : ViewModel() {
             _residenceFavsCount.value = _residenceFavs.size
         }
     }
+
+    // Method to check if a building is a favorite
+    fun isBuildingFav(image: BuildingImage): Boolean {
+        return _uniqueBuildingIds.contains(image.id)
+    }
+
+    // Method to remove a building favorite
+    fun removeBuildingFav(image: BuildingImage) {
+        if (_uniqueBuildingIds.remove(image.id)) {
+            _buildingFavs.removeAll { it.second.id == image.id }
+            _buildingFavsCount.value = _buildingFavs.size
+        }
+    }
+
+    // Method to check if a dining hall is a favorite
+    fun isDiningFav(image: DiningImage): Boolean {
+        return _uniqueDiningIds.contains(image.id)
+    }
+
+    // Method to remove a dining hall favorite
+    fun removeDiningFav(image: DiningImage) {
+        if (_uniqueDiningIds.remove(image.id)) {
+            _diningFavs.removeAll { it.second.id == image.id }
+            _diningFavsCount.value = _diningFavs.size
+        }
+    }
+
+    // Method to check if a residence hall is a favorite
+    fun isResidenceFav(image: ResidenceImage): Boolean {
+        return _uniqueResidenceIds.contains(image.id)
+    }
+
+    // Method to remove a residence hall favorite
+    fun removeResidenceFav(image: ResidenceImage) {
+        if (_uniqueResidenceIds.remove(image.id)) {
+            _residenceFavs.removeAll { it.second.id == image.id }
+            _residenceFavsCount.value = _residenceFavs.size
+        }
+    }
 }
