@@ -1,3 +1,7 @@
+/**
+ * This fragment displays a list of residence locations.
+ * It allows the user to add new residence locations and delete existing ones.
+ */
 package edu.quinnipiac.quinnipiactracker.fragments.lists
 
 import android.os.Bundle
@@ -20,6 +24,7 @@ class ResidenceHomeFragment : Fragment(R.layout.fragment_residence_home) {
     private var _binding: FragmentResidenceHomeBinding? = null
     private val binding get() = _binding!!
 
+    // List of residence locations
     private val residences = mutableListOf<Residence>()
     private lateinit var residenceAdapter: ResidenceAdapter
 
@@ -34,21 +39,26 @@ class ResidenceHomeFragment : Fragment(R.layout.fragment_residence_home) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        // Initialize residence adapter
         residenceAdapter = ResidenceAdapter(residences) { residence ->
+            // Delete residence location
             val viewModel = ViewModelProvider(this, ResidenceViewModelFactory(ResidenceRoomDatabase.getDatabase(requireContext()).residenceDao()))[ResidenceViewModel::class.java]
             viewModel.deleteResidence(residence)
         }
         binding.residenceRecyclerView.adapter = residenceAdapter
         binding.residenceRecyclerView.layoutManager = LinearLayoutManager(requireContext())
 
+        // Add residence button click listener
         binding.addResidenceFab.setOnClickListener {
             findNavController().navigate(R.id.action_residenceHomeFragment_to_residenceAddFragment)
         }
 
+        // Back button click listener
         binding.backButton.setOnClickListener {
             findNavController().navigate(R.id.action_residenceHomeFragment_to_homeFragment)
         }
 
+        // Observe all residence locations and update the list
         val viewModel = ViewModelProvider(this, ResidenceViewModelFactory(ResidenceRoomDatabase.getDatabase(requireContext()).residenceDao()))[ResidenceViewModel::class.java]
         viewModel.allResidences.observe(viewLifecycleOwner) { residences ->
             this.residences.clear()
@@ -58,6 +68,7 @@ class ResidenceHomeFragment : Fragment(R.layout.fragment_residence_home) {
         }
     }
 
+    // Update UI based on the list of residence locations
     private fun updateUI(residences: List<Residence>) {
         if (residences.isNotEmpty()) {
             binding.logoImageView.visibility = View.GONE

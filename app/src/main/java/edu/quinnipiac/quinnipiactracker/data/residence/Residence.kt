@@ -1,3 +1,7 @@
+/**
+ * This file is a default data class for the academic building database.
+ * It stores the name of the building itself and the coordinates for the map.
+ */
 package edu.quinnipiac.quinnipiactracker.data.residence
 
 import androidx.room.ColumnInfo

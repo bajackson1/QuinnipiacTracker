@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--This file has the themes for our app to more fit the app's audience/school colors.-->
 <resources>
     <!-- Normal Quinnipiac theme -->
     <style name="Theme.QuinnipiacTracker" parent="Theme.MaterialComponents.DayNight.NoActionBar">

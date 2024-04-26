@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--The outline for all the TextViews in the QU Tracker app-->
+<!--A box outline used for cards and TextViews-->
 <shape xmlns:android="http://schemas.android.com/apk/res/android"
     android:shape="rectangle">
     <stroke

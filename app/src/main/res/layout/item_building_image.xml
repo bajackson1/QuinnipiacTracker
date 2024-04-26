@@ -1,18 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<!-- Setting the dimensions for the images in our horizontal ImageView -->
-
+<!--This file sets a default image size for the fragments. It has the same layout as the one for
+the info fragment (item_building_favs).-->
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="240dp"
     android:layout_height="300dp"
     android:layout_margin="4dp">
 
-    <!-- Actually creating the images themselves -->
+    <!--Image View for the picture to go into-->
     <ImageView
         android:id="@+id/building_image"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:scaleType="centerCrop"
-        android:contentDescription="@string/todo"/>
+        android:contentDescription="@string/todo" />
 
 </FrameLayout>

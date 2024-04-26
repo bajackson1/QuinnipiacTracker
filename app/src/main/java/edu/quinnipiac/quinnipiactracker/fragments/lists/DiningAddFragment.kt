@@ -1,3 +1,8 @@
+/**
+ * This fragment adds new buildings to the database.
+ * It allows the user to select a building title from a preset list and save it to the database.
+ * If the building title is already in the database, it shows an error message.
+ */
 package edu.quinnipiac.quinnipiactracker.fragments.lists
 
 import android.os.Bundle
@@ -17,20 +22,26 @@ import edu.quinnipiac.quinnipiactracker.data.dining.DiningViewModelFactory
 import edu.quinnipiac.quinnipiactracker.databinding.FragmentDiningAddBinding
 
 class DiningAddFragment : Fragment() {
+    // Binding for the fragment
     private var _binding: FragmentDiningAddBinding? = null
     private val binding get() = _binding!!
 
+    // List of preset dining titles
     private val presetDiningTitles = listOf(
         "Student Center",
         "Bobcat Den/The Rat"
     )
 
+    // Map of preset dining titles to their coordinates
     private val presetDiningCoordinates: Map<String, LatLng> = mapOf(
         "Student Center" to LatLng(41.418170208397335, -72.89490294911462),
         "Bobcat Den/The Rat" to LatLng(41.41875670802813, -72.89178587199964)
     )
 
+    // Dining view model
     private lateinit var diningViewModel: DiningViewModel
+
+    // Set of existing dining titles
     private val existingDiningTitles = mutableSetOf<String>()
 
     override fun onCreateView(
@@ -44,8 +55,10 @@ class DiningAddFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        // Initialize dining view model
         diningViewModel = ViewModelProvider(this, DiningViewModelFactory(DiningRoomDatabase.getDatabase(requireContext()).diningDao()))[DiningViewModel::class.java]
 
+        // Observe all dining locations and update the existing titles set
         diningViewModel.allDinings.observe(viewLifecycleOwner) { dinings ->
             existingDiningTitles.clear()
             dinings.forEach { dining ->
@@ -53,18 +66,22 @@ class DiningAddFragment : Fragment() {
             }
         }
 
+        // Set up adapter for preset dining titles
         val adapter = ArrayAdapter(requireContext(), android.R.layout.simple_dropdown_item_1line, presetDiningTitles)
         binding.addDiningTitle.setAdapter(adapter)
 
+        // Save button click listener
         binding.saveDiningName.setOnClickListener {
             addDining()
         }
 
+        // Cancel button click listener
         binding.cancelDining.setOnClickListener {
             findNavController().navigateUp()
         }
     }
 
+    // Add a new dining location to the database
     private fun addDining() {
         val diningTitle = binding.addDiningTitle.text.toString()
         if (presetDiningTitles.contains(diningTitle)) {

@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- Since we already had a navigation bar at the bottom and wanted a title bar as well,
+we made another bar specifically for the title "Quinnipiac Tracker". This has no functionality
+and is simply for aesthetic purposes alone.-->
 <androidx.appcompat.widget.Toolbar
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/app_bar"
@@ -7,9 +10,6 @@
     android:background="@color/white"
     android:elevation="4dp"
     android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
-
-    <!-- Since we already had a navigation bar at the bottom and wanted a title bar as well, -->
-    <!-- we made another bar specifically for the title "Quinnipiac Tracker". -->
 
     <!-- Centers the title -->
     <LinearLayout

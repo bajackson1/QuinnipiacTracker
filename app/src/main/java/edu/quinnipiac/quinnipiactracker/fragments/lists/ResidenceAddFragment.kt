@@ -1,3 +1,8 @@
+/**
+ * This fragment adds new buildings to the database.
+ * It allows the user to select a building title from a preset list and save it to the database.
+ * If the building title is already in the database, it shows an error message.
+ */
 package edu.quinnipiac.quinnipiactracker.fragments.lists
 
 import android.os.Bundle
@@ -17,9 +22,11 @@ import edu.quinnipiac.quinnipiactracker.data.residence.ResidenceViewModelFactory
 import edu.quinnipiac.quinnipiactracker.databinding.FragmentResidenceAddBinding
 
 class ResidenceAddFragment : Fragment() {
+    // Binding for the fragment
     private var _binding: FragmentResidenceAddBinding? = null
     private val binding get() = _binding!!
 
+    // List of preset building titles
     private val presetResidenceTitles = listOf(
         "Commons",
         "Complex - Bakke",
@@ -69,6 +76,7 @@ class ResidenceAddFragment : Fragment() {
         "Village - 670",
     )
 
+    // Map of preset building titles to their coordinates
     private val presetResidenceCoordinates: Map<String, LatLng> = mapOf(
         "Commons" to LatLng(41.41725753367139, -72.89311894320355),
         "Complex - Bakke" to LatLng(41.419044087824226, -72.89030408410329),
@@ -118,13 +126,16 @@ class ResidenceAddFragment : Fragment() {
         "Village - 670" to LatLng(41.4172275911459, -72.89256012786207)
     )
 
+    // Building view model
     private lateinit var residenceViewModel: ResidenceViewModel
     private val existingResidenceTitles = mutableSetOf<String>()
 
+    // Set of existing building titles
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        // Inflate the layout for this fragment
         _binding = FragmentResidenceAddBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -132,8 +143,10 @@ class ResidenceAddFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        // Get the building view model
         residenceViewModel = ViewModelProvider(this, ResidenceViewModelFactory(ResidenceRoomDatabase.getDatabase(requireContext()).residenceDao()))[ResidenceViewModel::class.java]
 
+        // Observe the list of buildings and update the existing building titles
         residenceViewModel.allResidences.observe(viewLifecycleOwner) { residences ->
             existingResidenceTitles.clear()
             residences.forEach { residence ->
@@ -141,26 +154,36 @@ class ResidenceAddFragment : Fragment() {
             }
         }
 
+        // Set the adapter for the building title dropdown
         val adapter = ArrayAdapter(requireContext(), android.R.layout.simple_dropdown_item_1line, presetResidenceTitles)
         binding.addResidenceTitle.setAdapter(adapter)
 
+        // Set the click listener for the save button
         binding.saveResidenceName.setOnClickListener {
             addResidence()
         }
 
+        // Set the click listener for the cancel button
         binding.cancelResidence.setOnClickListener {
             findNavController().navigateUp()
         }
     }
 
+    // Function to add a new building
     private fun addResidence() {
+        // Get the building title from the text field
         val residenceTitle = binding.addResidenceTitle.text.toString()
+        // Check if the title is in the preset list
         if (presetResidenceTitles.contains(residenceTitle)) {
+            // Check if the title is already in the existing building titles
             if (existingResidenceTitles.contains(residenceTitle)) {
+                // Show an error message if the title is already existing
                 binding.addResidenceTitle.error = "You have already visited this residence."
             } else {
+                // Get the coordinates of the building from the preset map
                 val coordinates = presetResidenceCoordinates[residenceTitle]
                 if (coordinates != null) {
+                    // Create a new building object and add it to the database
                     val newResidence = Residence(
                         itemName = residenceTitle,
                         latitude = coordinates.latitude,
@@ -168,12 +191,15 @@ class ResidenceAddFragment : Fragment() {
                     )
                     residenceViewModel.addNewResidence(newResidence)
                     existingResidenceTitles.add(residenceTitle)
+                    // Navigate to the building home fragment
                     findNavController().navigate(R.id.action_residenceAddFragment_to_residenceHomeFragment)
                 } else {
+                    // Show an error message if the coordinates are not found
                     binding.addResidenceTitle.error = "Please select a valid residence title from the list."
                 }
             }
         } else {
+            // Show an error message if the title is not in the preset list
             binding.addResidenceTitle.error = "Please select a valid residence title from the list."
         }
     }

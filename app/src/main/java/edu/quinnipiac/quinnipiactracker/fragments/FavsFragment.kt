@@ -1,9 +1,9 @@
 /**
  * The Favs fragment is responsible for displaying the horizontal list of favorite images.
  * It uses a RecyclerView and a BuildingImageAdapter to manage the individual image views and
- * their data.
+ * their data. It has a similar style to the InfoFragment, but we had to use Glide for the
+ * image loading as the InfoFragment style didn't work when adding favorites.
  */
-
 package edu.quinnipiac.quinnipiactracker.fragments
 
 import android.os.Bundle

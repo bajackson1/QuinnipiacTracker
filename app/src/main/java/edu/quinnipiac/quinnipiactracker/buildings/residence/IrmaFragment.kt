@@ -1,4 +1,7 @@
-package edu.quinnipiac.quinnipiactracker.buildings.residence
+/**
+ * This file holds the functionality for the Irma fragment.
+ * This includes the back and favorite button.
+ */package edu.quinnipiac.quinnipiactracker.buildings.residence
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -13,6 +16,7 @@ import edu.quinnipiac.quinnipiactracker.data.images.ResidenceImage
 import edu.quinnipiac.quinnipiactracker.data.images.SharedViewModel
 
 class IrmaFragment : Fragment() {
+    // Declare SharedViewModel instance
     private lateinit var sharedViewModel: SharedViewModel
 
     override fun onCreateView(
@@ -21,6 +25,7 @@ class IrmaFragment : Fragment() {
     ): View? {
         val view = inflater.inflate(R.layout.fragment_irma, container, false)
 
+        // Get SharedViewModel to store in sharedViewModel
         sharedViewModel = ViewModelProvider(requireActivity())[SharedViewModel::class.java]
 
         // Setting back button

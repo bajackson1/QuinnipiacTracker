@@ -34,9 +34,10 @@ class DiningImageAdapter(
 
     // Binding the image data to the view holder
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        // Set the dining image resource
         holder.diningImage.setImageResource(diningImages[position])
 
-        // Setting the click listener for each image based on its position in the view
+        // Set the click listener for each image based on its position in the view
         holder.diningImage.setOnClickListener {
             when (position) {
                 0 -> studentCenterClickListener()

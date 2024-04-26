@@ -1,7 +1,8 @@
 /**
  * The Info fragment is responsible for displaying the horizontal list of images.
  * It uses a RecyclerView and a BuildingImageAdapter to manage the individual image views and
- * their data.
+ * their data. It is similar to the code in FavsFragment as they are essentially the same thing,
+ * but FavsFragment starts with empty RecyclerViews to have the favorite ones added later.
  */
 
 package edu.quinnipiac.quinnipiactracker.fragments

@@ -1,3 +1,7 @@
+/**
+ * This file holds the functionality for the Echlin fragment.
+ * This includes the back and favorite button.
+ */
 package edu.quinnipiac.quinnipiactracker.buildings.academic
 
 import android.os.Bundle

@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--This file sets a default style for the added building in each add building fragment.-->
 <layout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
+    <!--CardView container for the building information card-->
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -10,12 +12,14 @@
         app:cardElevation="6dp"
         app:cardBackgroundColor="@android:color/white">
 
+        <!--ConstraintLayout for the correct positioning-->
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@drawable/box_outline"
             android:padding="16dp">
 
+            <!--TextView for building title placeholder-->
             <TextView
                 android:id="@+id/buildingTitle"
                 android:layout_width="0dp"
@@ -28,6 +32,7 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/deleteIcon" />
 
+            <!--ImageView for delete button icon-->
             <ImageView
                 android:id="@+id/deleteIcon"
                 android:layout_width="wrap_content"
@@ -40,6 +45,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
+
     </androidx.cardview.widget.CardView>
 
 </layout>

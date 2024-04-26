@@ -1,3 +1,7 @@
+/**
+ * This fragment displays a list of buildings.
+ * It allows the user to add new buildings and delete existing ones.
+ */
 package edu.quinnipiac.quinnipiactracker.fragments.lists
 
 import android.os.Bundle
@@ -20,6 +24,7 @@ class BuildingHomeFragment : Fragment(R.layout.fragment_building_home) {
     private var _binding: FragmentBuildingHomeBinding? = null
     private val binding get() = _binding!!
 
+    // List of buildings
     private val buildings = mutableListOf<Building>()
     private lateinit var buildingAdapter: BuildingAdapter
 
@@ -34,21 +39,26 @@ class BuildingHomeFragment : Fragment(R.layout.fragment_building_home) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        // Initialize building adapter
         buildingAdapter = BuildingAdapter(buildings) { building ->
+            // Delete building
             val viewModel = ViewModelProvider(this, BuildingViewModelFactory(BuildingRoomDatabase.getDatabase(requireContext()).buildingDao()))[BuildingViewModel::class.java]
             viewModel.deleteBuilding(building)
         }
         binding.buildingRecyclerView.adapter = buildingAdapter
         binding.buildingRecyclerView.layoutManager = LinearLayoutManager(requireContext())
 
+        // Add building button click listener
         binding.addBuildingFab.setOnClickListener {
             findNavController().navigate(R.id.action_buildingHomeFragment_to_buildingAddFragment)
         }
 
+        // Back button click listener
         binding.backButton.setOnClickListener {
             findNavController().navigate(R.id.action_buildingHomeFragment_to_homeFragment)
         }
 
+        // Observe all buildings and update the list
         val viewModel = ViewModelProvider(this, BuildingViewModelFactory(BuildingRoomDatabase.getDatabase(requireContext()).buildingDao()))[BuildingViewModel::class.java]
         viewModel.allBuildings.observe(viewLifecycleOwner) { buildings ->
             this.buildings.clear()
@@ -58,7 +68,9 @@ class BuildingHomeFragment : Fragment(R.layout.fragment_building_home) {
         }
     }
 
+    // Update UI based on the list of buildings
     private fun updateUI(buildings: List<Building>) {
+        // Setting item visibility
         if (buildings.isNotEmpty()) {
             binding.logoImageView.visibility = View.GONE
             binding.logoTextView.visibility = View.GONE

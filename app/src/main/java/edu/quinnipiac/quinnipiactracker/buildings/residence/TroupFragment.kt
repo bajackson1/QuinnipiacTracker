@@ -1,3 +1,7 @@
+/**
+ * This file holds the functionality for the Troup fragment.
+ * This includes the back and favorite button.
+ */
 package edu.quinnipiac.quinnipiactracker.buildings.residence
 
 import android.os.Bundle
@@ -13,6 +17,7 @@ import edu.quinnipiac.quinnipiactracker.data.images.ResidenceImage
 import edu.quinnipiac.quinnipiactracker.data.images.SharedViewModel
 
 class TroupFragment : Fragment() {
+    // Declare SharedViewModel instance
     private lateinit var sharedViewModel: SharedViewModel
 
     override fun onCreateView(
@@ -21,6 +26,7 @@ class TroupFragment : Fragment() {
     ): View? {
         val view = inflater.inflate(R.layout.fragment_troup, container, false)
 
+        // Get SharedViewModel to store in sharedViewModel
         sharedViewModel = ViewModelProvider(requireActivity())[SharedViewModel::class.java]
 
         // Setting back button

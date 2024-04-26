@@ -10,13 +10,13 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <!-- Academic building horizontal image scroller -->
+        <!--Academic Building horizontal image scroller -->
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/building_favs_recycler_view"
             android:layout_width="match_parent"
             android:layout_height="240dp" />
 
-        <!-- TextView for the academic building category title -->
+        <!-- TextView for the academic building category title-->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -45,13 +45,13 @@
 
         </LinearLayout>
 
-        <!-- Dining building horizontal image scroller -->
+        <!--Dining Hall horizontal image scroller-->
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/dining_favs_recycler_view"
             android:layout_width="match_parent"
             android:layout_height="240dp" />
 
-        <!-- TextView for the dining building category title -->
+        <!--TextView for the dining hall category title-->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -80,13 +80,13 @@
 
         </LinearLayout>
 
-        <!-- Residence building horizontal image scroller -->
+        <!--Residence Hall/Dorm horizontal image scroller-->
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/residence_favs_recycler_view"
             android:layout_width="match_parent"
             android:layout_height="240dp" />
 
-        <!-- TextView for the residence building category title -->
+        <!--TextView for the residence hall/dorm category title-->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

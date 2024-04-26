@@ -1,3 +1,8 @@
+/**
+ * The MainActivity is the activity that all of the app's fragments are in.
+ * This initializes app features such as the navigation bar and the NavController so that the user
+ * can navigate from fragment to fragment.
+ */
 package edu.quinnipiac.quinnipiactracker
 
 import android.os.Bundle

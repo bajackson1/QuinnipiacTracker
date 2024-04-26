@@ -43,9 +43,10 @@ class ResidenceImageAdapter(
 
     // Binding the image data to the view holder
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        // Set the residence image resource
         holder.residenceImage.setImageResource(residenceImages[position])
 
-        // Setting the click listener for each image based on its position in the view
+        // Set the click listener for each image based on its position in the view
         holder.residenceImage.setOnClickListener {
             when (position) {
                 0 -> commonsClickListener()

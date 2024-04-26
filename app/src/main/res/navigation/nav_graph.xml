@@ -1,92 +1,116 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--This file is used to navigate between the app's different screens
+It is extremely long due to the number of screens for each building.-->
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
     app:startDestination="@id/homeFragment">
-    <!--Set the starting fragment to the Home screen-->
+    <!--Set the home screen as the starting screen-->
 
-    <!--Home Fragment-->
+    <!--Home Screen-->
     <fragment
         android:id="@+id/homeFragment"
         android:name="edu.quinnipiac.quinnipiactracker.fragments.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home">
+        <!--Navigating to the academic building list screen-->
         <action
             android:id="@+id/action_homeFragment_to_buildingHomeFragment"
-            app:destination="@id/buildingHomeFragment"/>
+            app:destination="@id/buildingHomeFragment" />
+        <!--Navigating to the dining hall list screen-->
         <action
             android:id="@+id/action_homeFragment_to_diningHomeFragment"
             app:destination="@id/diningHomeFragment" />
+        <!--Navigating to the residence hall screen-->
         <action
             android:id="@+id/action_homeFragment_to_residenceHomeFragment"
             app:destination="@id/residenceHomeFragment" />
     </fragment>
 
-    <!--Info Fragment-->
+    <!--Info Screen-->
     <fragment
         android:id="@+id/infoFragment"
         android:name="edu.quinnipiac.quinnipiactracker.fragments.InfoFragment"
         android:label="fragment_info"
         tools:layout="@layout/fragment_info">
-        <!--Actions to go to and from each building-->
+        <!--Navigating to the CAS info screen-->
         <action
             android:id="@+id/action_infoFragment_to_casFragment"
-            app:destination="@id/casFragment"/>
+            app:destination="@id/casFragment" />
+        <!--Navigating to the CCE info screen-->
         <action
             android:id="@+id/action_infoFragment_to_cceFragment"
-            app:destination="@id/cceFragment"/>
+            app:destination="@id/cceFragment" />
+        <!--Navigating to the library info screen-->
         <action
             android:id="@+id/action_infoFragment_to_libraryFragment"
-            app:destination="@id/libraryFragment"/>
+            app:destination="@id/libraryFragment" />
+        <!--Navigating to the Tator Hall info screen-->
         <action
             android:id="@+id/action_infoFragment_to_tatorFragment"
-            app:destination="@id/tatorFragment"/>
+            app:destination="@id/tatorFragment" />
+        <!--Navigating to the Lender Business Center info screen-->
         <action
             android:id="@+id/action_infoFragment_to_lenderFragment"
-            app:destination="@id/lenderFragment"/>
+            app:destination="@id/lenderFragment" />
+        <!--Navigating to the Echlin Center info screen-->
         <action
             android:id="@+id/action_infoFragment_to_echlinFragment"
-            app:destination="@id/echlinFragment"/>
+            app:destination="@id/echlinFragment" />
+        <!--Navigating to the favorites screen-->
         <action
             android:id="@+id/action_infoFragment_to_favsFragment"
             app:destination="@id/favsFragment" />
+        <!--Navigating to the Bobcat Den/Rat info screen-->
         <action
             android:id="@+id/action_infoFragment_to_ratFragment"
             app:destination="@id/ratFragment" />
+        <!--Navigating to the Commons dorm info screen-->
         <action
             android:id="@+id/action_infoFragment_to_commonsFragment"
             app:destination="@id/commonsFragment" />
+        <!--Navigating to the student center info screen-->
         <action
             android:id="@+id/action_infoFragment_to_studentCenterFragment"
             app:destination="@id/studentCenterFragment" />
+        <!--Navigating to the Irma dorm info screen-->
         <action
             android:id="@+id/action_infoFragment_to_irmaFragment"
             app:destination="@id/irmaFragment" />
+        <!--Navigating to the Village dorm info screen-->
         <action
             android:id="@+id/action_infoFragment_to_villageFragment"
             app:destination="@id/villageFragment" />
+        <!--Navigating to the Complex dorm info screen-->
         <action
             android:id="@+id/action_infoFragment_to_complexFragment"
             app:destination="@id/complexFragment" />
+        <!--Navigating to the Mountainview dorm screen-->
         <action
             android:id="@+id/action_infoFragment_to_mountainviewFragment"
             app:destination="@id/mountainviewFragment" />
+        <!--Navigating to the Ledges dorm info screen-->
         <action
             android:id="@+id/action_infoFragment_to_ledgesFragment"
             app:destination="@id/ledgesFragment" />
+        <!--Navigating to the Dana dorm info screen-->
         <action
             android:id="@+id/action_infoFragment_to_danaFragment"
             app:destination="@id/danaFragment" />
+        <!--Navigating to the Hill dorm info screen-->
         <action
             android:id="@+id/action_infoFragment_to_hillFragment"
             app:destination="@id/hillFragment" />
+        <!--Navigating to the Perlroth dorm info screen-->
         <action
             android:id="@+id/action_infoFragment_to_perlFragment"
             app:destination="@id/perlFragment" />
+        <!--Navigating to the Troup dorm info screen-->
         <action
             android:id="@+id/action_infoFragment_to_troupFragment"
             app:destination="@id/troupFragment" />
+        <!--Navigating to the Larson dorm info screen-->
         <action
             android:id="@+id/action_infoFragment_to_larsonFragment"
             app:destination="@id/larsonFragment" />
@@ -98,405 +122,467 @@
         android:name="edu.quinnipiac.quinnipiactracker.fragments.FavsFragment"
         android:label="fragment_favs"
         tools:layout="@layout/fragment_favs">
+        <!--Navigating to the info screen-->
         <action
             android:id="@+id/action_favsFragment_to_infoFragment"
             app:destination="@id/infoFragment" />
+        <!--Navigating to the Echlin Center info screen-->
         <action
             android:id="@+id/action_favsFragment_to_echlinFragment"
             app:destination="@id/echlinFragment" />
+        <!--Navigating to the Bobcat Den/Rat info screen-->
         <action
             android:id="@+id/action_favsFragment_to_ratFragment"
             app:destination="@id/ratFragment" />
+        <!--Navigating to the Commons dorm info screen-->
         <action
             android:id="@+id/action_favsFragment_to_commonsFragment"
             app:destination="@id/commonsFragment" />
+        <!--Navigating to the Tator Hall info screen-->
         <action
             android:id="@+id/action_favsFragment_to_tatorFragment"
             app:destination="@id/tatorFragment" />
+        <!--Navigating to the library  info screen-->
         <action
             android:id="@+id/action_favsFragment_to_libraryFragment"
             app:destination="@id/libraryFragment" />
+        <!--Navigating to the CAS info screen-->
         <action
             android:id="@+id/action_favsFragment_to_casFragment"
             app:destination="@id/casFragment" />
+        <!--Navigating to the student center info screen-->
         <action
             android:id="@+id/action_favsFragment_to_studentCenterFragment"
             app:destination="@id/studentCenterFragment" />
+        <!--Navigating to the Lender Business Center info screen-->
         <action
             android:id="@+id/action_favsFragment_to_lenderFragment"
             app:destination="@id/lenderFragment" />
+        <!--Navigating to the Irma dorm info screen-->
         <action
             android:id="@+id/action_favsFragment_to_irmaFragment"
             app:destination="@id/irmaFragment" />
+        <!--Navigating to the CCE info screen-->
         <action
             android:id="@+id/action_favsFragment_to_cceFragment"
             app:destination="@id/cceFragment" />
+        <!--Navigating to the Village dorm info screen-->
         <action
             android:id="@+id/action_favsFragment_to_villageFragment"
             app:destination="@id/villageFragment" />
+        <!--Navigating to the Complex dorm info screen-->
         <action
             android:id="@+id/action_favsFragment_to_complexFragment"
             app:destination="@id/complexFragment" />
+        <!--Navigating to the Mountainview dorm info screen-->
         <action
             android:id="@+id/action_favsFragment_to_mountainviewFragment"
             app:destination="@id/mountainviewFragment" />
+        <!--Navigating to the Ledges dorm info screen-->
         <action
             android:id="@+id/action_favsFragment_to_ledgesFragment"
             app:destination="@id/ledgesFragment" />
+        <!--Navigating to the Dana dorm info screen-->
         <action
             android:id="@+id/action_favsFragment_to_danaFragment"
             app:destination="@id/danaFragment" />
+        <!--Navigating to the Hill dorm info screen-->
         <action
             android:id="@+id/action_favsFragment_to_hillFragment"
             app:destination="@id/hillFragment" />
+        <!--Navigating to the Perlroth dorm info screen-->
         <action
             android:id="@+id/action_favsFragment_to_perlFragment"
             app:destination="@id/perlFragment" />
+        <!--Navigating to the Troup dorm info screen-->
         <action
             android:id="@+id/action_favsFragment_to_troupFragment"
             app:destination="@id/troupFragment" />
+        <!--Navigating to the Larson dorm info screen-->
         <action
             android:id="@+id/action_favsFragment_to_larsonFragment"
             app:destination="@id/larsonFragment" />
     </fragment>
 
-    <!--Help Fragment-->
+    <!--Help Screen-->
     <fragment
         android:id="@+id/helpFragment"
         android:name="edu.quinnipiac.quinnipiactracker.fragments.HelpFragment"
         android:label="fragment_help"
-        tools:layout="@layout/fragment_help"/>
+        tools:layout="@layout/fragment_help" />
 
-    <!--CAS Fragment-->
+    <!--CAS Info Screen-->
     <fragment
         android:id="@+id/casFragment"
         android:name="edu.quinnipiac.quinnipiactracker.buildings.academic.CasFragment"
         android:label="CasFragment">
-        <!--Action to go back-->
+        <!--Navigate to the info screen-->
         <action
             android:id="@+id/action_casFragment_to_infoFragment"
-            app:destination="@id/infoFragment"/>
+            app:destination="@id/infoFragment" />
+        <!--Navigate to the favorites screen-->
         <action
             android:id="@+id/action_casFragment_to_favsFragment"
             app:destination="@id/favsFragment" />
     </fragment>
 
-    <!--CCE Fragment-->
+    <!--CCE Info Screen-->
     <fragment
         android:id="@+id/cceFragment"
         android:name="edu.quinnipiac.quinnipiactracker.buildings.academic.CceFragment"
         android:label="CceFragment">
-        <!--Action to go back-->
+        <!--Navigate to the info screen-->
         <action
             android:id="@+id/action_cceFragment_to_infoFragment"
-            app:destination="@id/infoFragment"/>
+            app:destination="@id/infoFragment" />
+        <!--Navigate to the favorites screen-->
         <action
             android:id="@+id/action_cceFragment_to_favsFragment"
             app:destination="@id/favsFragment" />
     </fragment>
 
-    <!--Echlin Fragment-->
+    <!--Echlin Info Screen-->
     <fragment
         android:id="@+id/echlinFragment"
         android:name="edu.quinnipiac.quinnipiactracker.buildings.academic.EchlinFragment"
         android:label="EchlinFragment">
-        <!--Action to go back-->
+        <!--Navigate to the info screen-->
         <action
             android:id="@+id/action_echlinFragment_to_infoFragment"
-            app:destination="@id/infoFragment"/>
+            app:destination="@id/infoFragment" />
+        <!--Navigate to the favorites screen-->
         <action
             android:id="@+id/action_echlinFragment_to_favsFragment"
             app:destination="@id/favsFragment" />
     </fragment>
 
-    <!--Lender Fragment-->
+    <!--Lender Info Screen-->
     <fragment
         android:id="@+id/lenderFragment"
         android:name="edu.quinnipiac.quinnipiactracker.buildings.academic.LenderFragment"
         android:label="LenderFragment">
-        <!--Action to go back-->
+        <!--Navigate to the info screen-->
         <action
             android:id="@+id/action_lenderFragment_to_infoFragment"
-            app:destination="@id/infoFragment"/>
+            app:destination="@id/infoFragment" />
+        <!--Navigate to the favorites screen-->
         <action
             android:id="@+id/action_lenderFragment_to_favsFragment"
             app:destination="@id/favsFragment" />
     </fragment>
 
-    <!--Tator Fragment-->
+    <!--Tator Info Screen-->
     <fragment
         android:id="@+id/tatorFragment"
         android:name="edu.quinnipiac.quinnipiactracker.buildings.academic.TatorFragment"
         android:label="TatorFragment">
-        <!--Action to go back to Info Fragment-->
+        <!--Navigate to the info screen-->
         <action
             android:id="@+id/action_tatorFragment_to_infoFragment"
-            app:destination="@id/infoFragment"/>
+            app:destination="@id/infoFragment" />
+        <!--Navigate to the favorites screen-->
         <action
             android:id="@+id/action_tatorFragment_to_favsFragment"
             app:destination="@id/favsFragment" />
     </fragment>
 
-    <!--Library Fragment-->
+    <!--Library Screen-->
     <fragment
         android:id="@+id/libraryFragment"
         android:name="edu.quinnipiac.quinnipiactracker.buildings.academic.LibraryFragment"
         android:label="LibraryFragment">
-        <!--Action to go back to Info Fragment-->
+        <!--Navigate to the info screen-->
         <action
             android:id="@+id/action_libraryFragment_to_infoFragment"
-            app:destination="@id/infoFragment"/>
+            app:destination="@id/infoFragment" />
+        <!--Navigate to the favorites screen-->
         <action
             android:id="@+id/action_libraryFragment_to_favsFragment"
             app:destination="@id/favsFragment" />
     </fragment>
 
-
+    <!--Add Academic Building Screen-->
     <fragment
         android:id="@+id/buildingAddFragment"
         android:name="edu.quinnipiac.quinnipiactracker.fragments.lists.BuildingAddFragment"
         android:label="BuildingAddFragment" >
+        <!--Navigate to the academic building list screen-->
         <action
             android:id="@+id/action_buildingAddFragment_to_buildingHomeFragment"
             app:destination="@id/buildingHomeFragment" />
     </fragment>
 
-
+    <!--Academic Building List Screen-->
     <fragment
         android:id="@+id/buildingHomeFragment"
         android:name="edu.quinnipiac.quinnipiactracker.fragments.lists.BuildingHomeFragment"
         android:label="BuildingHomeFragment" >
+        <!--Navigate to the home screen-->
         <action
             android:id="@+id/action_buildingHomeFragment_to_homeFragment"
             app:destination="@id/homeFragment" />
+        <!--Navigate to the adding building screen-->
         <action
             android:id="@+id/action_buildingHomeFragment_to_buildingAddFragment"
             app:destination="@id/buildingAddFragment" />
     </fragment>
 
-
+    <!--Add Dining Hall Screen-->
     <fragment
         android:id="@+id/diningAddFragment"
         android:name="edu.quinnipiac.quinnipiactracker.fragments.lists.DiningAddFragment"
         android:label="DiningAddFragment" >
+        <!--Navigate to the dining hall list screen-->
         <action
             android:id="@+id/action_diningAddFragment_to_diningHomeFragment"
             app:destination="@id/diningHomeFragment" />
     </fragment>
 
-
+    <!--Dining Hall List Screen-->
     <fragment
         android:id="@+id/diningHomeFragment"
         android:name="edu.quinnipiac.quinnipiactracker.fragments.lists.DiningHomeFragment"
         android:label="DiningHomeFragment" >
+        <!--Navigate to the home screen-->
         <action
             android:id="@+id/action_diningHomeFragment_to_homeFragment"
             app:destination="@id/homeFragment" />
+        <!--Navigate to the add dining hall screen-->
         <action
             android:id="@+id/action_diningHomeFragment_to_diningAddFragment"
             app:destination="@id/diningAddFragment" />
     </fragment>
 
-
+    <!--Add Residence Hall/Dorm Screen-->
     <fragment
         android:id="@+id/residenceAddFragment"
         android:name="edu.quinnipiac.quinnipiactracker.fragments.lists.ResidenceAddFragment"
         android:label="ResidenceAddFragment" >
+        <!--Navigate to the residence hall/dorm list screen-->
         <action
             android:id="@+id/action_residenceAddFragment_to_residenceHomeFragment"
             app:destination="@id/residenceHomeFragment" />
     </fragment>
 
-
+    <!--Residence Hall/Dorm List Screen-->
     <fragment
         android:id="@+id/residenceHomeFragment"
         android:name="edu.quinnipiac.quinnipiactracker.fragments.lists.ResidenceHomeFragment"
         android:label="ResidenceHomeFragment" >
+        <!--Navigate to the home screen-->
         <action
             android:id="@+id/action_residenceHomeFragment_to_homeFragment"
             app:destination="@id/homeFragment" />
+        <!--Navigate to the add residence hall/dorm screen-->
         <action
             android:id="@+id/action_residenceHomeFragment_to_residenceAddFragment"
             app:destination="@id/residenceAddFragment" />
     </fragment>
 
-
+    <!--Bobcat Den/Rat Info Screen-->
     <fragment
         android:id="@+id/ratFragment"
         android:name="edu.quinnipiac.quinnipiactracker.buildings.dining.RatFragment"
         android:label="fragment_rat"
         tools:layout="@layout/fragment_rat" >
+        <!--Navigate to the info screen-->
         <action
             android:id="@+id/action_ratFragment_to_infoFragment"
             app:destination="@id/infoFragment" />
+        <!--Navigate to the favorites screen-->
         <action
             android:id="@+id/action_ratFragment_to_favsFragment"
             app:destination="@id/favsFragment" />
     </fragment>
 
-
+    <!--Commons Info Screen-->
     <fragment
         android:id="@+id/commonsFragment"
         android:name="edu.quinnipiac.quinnipiactracker.buildings.residence.CommonsFragment"
         android:label="fragment_commons"
         tools:layout="@layout/fragment_commons" >
+        <!--Navigate to the info screen-->
         <action
             android:id="@+id/action_commonsFragment_to_infoFragment"
             app:destination="@id/infoFragment" />
+        <!--Navigate to the favorites screen-->
         <action
             android:id="@+id/action_commonsFragment_to_favsFragment"
             app:destination="@id/favsFragment" />
     </fragment>
 
-
+    <!--Student Center Info Screen-->
     <fragment
         android:id="@+id/studentCenterFragment"
         android:name="edu.quinnipiac.quinnipiactracker.buildings.dining.StudentCenterFragment"
         android:label="fragment_student_center"
         tools:layout="@layout/fragment_student_center" >
+        <!--Navigate to the info screen-->
         <action
             android:id="@+id/action_studentCenterFragment_to_infoFragment"
             app:destination="@id/infoFragment" />
+        <!--Navigate to the favorites screen-->
         <action
             android:id="@+id/action_studentCenterFragment_to_favsFragment"
             app:destination="@id/favsFragment" />
     </fragment>
 
-
+    <!--Irma Info Screen-->
     <fragment
         android:id="@+id/irmaFragment"
         android:name="edu.quinnipiac.quinnipiactracker.buildings.residence.IrmaFragment"
         android:label="fragment_irma"
         tools:layout="@layout/fragment_irma" >
+        <!--Navigate to the info screen-->
         <action
             android:id="@+id/action_irmaFragment_to_infoFragment"
             app:destination="@id/infoFragment" />
+        <!--Navigate to the favorites screen-->
         <action
             android:id="@+id/action_irmaFragment_to_favsFragment"
             app:destination="@id/favsFragment" />
     </fragment>
 
-
+    <!--Village Info Screen-->
     <fragment
         android:id="@+id/villageFragment"
         android:name="edu.quinnipiac.quinnipiactracker.buildings.residence.VillageFragment"
         android:label="fragment_village"
         tools:layout="@layout/fragment_village" >
+        <!--Navigate to the info screen-->
         <action
             android:id="@+id/action_villageFragment_to_infoFragment"
             app:destination="@id/infoFragment" />
+        <!--Navigate to the favorites screen-->
         <action
             android:id="@+id/action_villageFragment_to_favsFragment"
             app:destination="@id/favsFragment" />
     </fragment>
 
-
+    <!--Complex Info Screen-->
     <fragment
         android:id="@+id/complexFragment"
         android:name="edu.quinnipiac.quinnipiactracker.buildings.residence.ComplexFragment"
         android:label="fragment_complex"
         tools:layout="@layout/fragment_complex" >
+        <!--Navigate to the info screen-->
         <action
             android:id="@+id/action_complexFragment_to_infoFragment"
             app:destination="@id/infoFragment" />
+        <!--Navigate to the favorites screen-->
         <action
             android:id="@+id/action_complexFragment_to_favsFragment"
             app:destination="@id/favsFragment" />
     </fragment>
 
-
+    <!--Dana Info Screen-->
     <fragment
         android:id="@+id/danaFragment"
         android:name="edu.quinnipiac.quinnipiactracker.buildings.residence.DanaFragment"
         android:label="fragment_dana"
         tools:layout="@layout/fragment_dana" >
+        <!--Navigate to the info screen-->
         <action
             android:id="@+id/action_danaFragment_to_infoFragment"
             app:destination="@id/infoFragment" />
+        <!--Navigate to the favorites screen-->
         <action
             android:id="@+id/action_danaFragment_to_favsFragment"
             app:destination="@id/favsFragment" />
     </fragment>
 
-
+    <!--Hill Info Screen-->
     <fragment
         android:id="@+id/hillFragment"
         android:name="edu.quinnipiac.quinnipiactracker.buildings.residence.HillFragment"
         android:label="fragment_hill"
         tools:layout="@layout/fragment_hill" >
+        <!--Navigate to the info screen-->
         <action
             android:id="@+id/action_hillFragment_to_infoFragment"
             app:destination="@id/infoFragment" />
+        <!--Navigate to the favorites screen-->
         <action
             android:id="@+id/action_hillFragment_to_favsFragment"
             app:destination="@id/favsFragment" />
     </fragment>
 
-
+    <!--Larson Info Screen-->
     <fragment
         android:id="@+id/larsonFragment"
         android:name="edu.quinnipiac.quinnipiactracker.buildings.residence.LarsonFragment"
         android:label="fragment_larson"
         tools:layout="@layout/fragment_larson" >
+        <!--Navigate to the info screen-->
         <action
             android:id="@+id/action_larsonFragment_to_infoFragment"
             app:destination="@id/infoFragment" />
+        <!--Navigate to the favorites screen-->
         <action
             android:id="@+id/action_larsonFragment_to_favsFragment"
             app:destination="@id/favsFragment" />
     </fragment>
 
-
+    <!--Ledges Info Screen-->
     <fragment
         android:id="@+id/ledgesFragment"
         android:name="edu.quinnipiac.quinnipiactracker.buildings.residence.LedgesFragment"
         android:label="fragment_ledges"
         tools:layout="@layout/fragment_ledges" >
+        <!--Navigate to the info screen-->
         <action
             android:id="@+id/action_ledgesFragment_to_infoFragment"
             app:destination="@id/infoFragment" />
+        <!--Navigate to the favorites screen-->
         <action
             android:id="@+id/action_ledgesFragment_to_favsFragment"
             app:destination="@id/favsFragment" />
     </fragment>
 
-
+    <!--Mountainview Info Screen-->
     <fragment
         android:id="@+id/mountainviewFragment"
         android:name="edu.quinnipiac.quinnipiactracker.buildings.residence.MountainviewFragment"
         android:label="fragment_mountainview"
         tools:layout="@layout/fragment_mountainview" >
+        <!--Navigate to the info screen-->
         <action
             android:id="@+id/action_mountainviewFragment_to_infoFragment"
             app:destination="@id/infoFragment" />
+        <!--Navigate to the favorites screen-->
         <action
             android:id="@+id/action_mountainviewFragment_to_favsFragment"
             app:destination="@id/favsFragment" />
     </fragment>
 
-
+    <!--Perlroth Info Screen-->
     <fragment
         android:id="@+id/perlFragment"
         android:name="edu.quinnipiac.quinnipiactracker.buildings.residence.PerlFragment"
         android:label="fragment_perl"
         tools:layout="@layout/fragment_perl" >
+        <!--Navigate to the info screen-->
         <action
             android:id="@+id/action_perlFragment_to_infoFragment"
             app:destination="@id/infoFragment" />
+        <!--Navigate to the favorites screen-->
         <action
             android:id="@+id/action_perlFragment_to_favsFragment"
             app:destination="@id/favsFragment" />
     </fragment>
 
 
+    <!--Troup Info Screen-->
     <fragment
         android:id="@+id/troupFragment"
         android:name="edu.quinnipiac.quinnipiactracker.buildings.residence.TroupFragment"
         android:label="fragment_troup"
         tools:layout="@layout/fragment_troup" >
+        <!--Navigate to the info screen-->
         <action
             android:id="@+id/action_troupFragment_to_infoFragment"
             app:destination="@id/infoFragment" />
+        <!--Navigate to the favorites screen-->
         <action
             android:id="@+id/action_troupFragment_to_favsFragment"
             app:destination="@id/favsFragment" />

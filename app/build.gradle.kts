@@ -1,6 +1,7 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    // Using kapt since ksp was giving issues
     id("org.jetbrains.kotlin.kapt")
 }
 

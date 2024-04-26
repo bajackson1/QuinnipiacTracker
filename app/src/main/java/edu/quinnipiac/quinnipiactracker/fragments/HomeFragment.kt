@@ -58,21 +58,25 @@ class HomeFragment : Fragment(R.layout.fragment_home), OnMapReadyCallback {
         val mapFragment = childFragmentManager.findFragmentById(R.id.map) as SupportMapFragment
         mapFragment.getMapAsync(this)
 
+        // Navigation to the academic building home fragment
         val navigateToBuildings = view.findViewById<View>(R.id.building_group)
         navigateToBuildings.setOnClickListener {
             findNavController().navigate(R.id.action_homeFragment_to_buildingHomeFragment)
         }
 
+        // Navigation to the dining hall home fragment
         val navigateToDining = view.findViewById<View>(R.id.dining_group)
         navigateToDining.setOnClickListener {
             findNavController().navigate(R.id.action_homeFragment_to_diningHomeFragment)
         }
 
+        // Navigation to the residence hall/dorm home fragment
         val navigateToResidences = view.findViewById<View>(R.id.residence_group)
         navigateToResidences.setOnClickListener {
             findNavController().navigate(R.id.action_homeFragment_to_residenceHomeFragment)
         }
 
+        // Button to reset the map to the original position
         val resetMapButton = view.findViewById<Button>(R.id.reset_map_button)
         resetMapButton.setOnClickListener {
             resetMap()
@@ -93,6 +97,7 @@ class HomeFragment : Fragment(R.layout.fragment_home), OnMapReadyCallback {
         googleMap.uiSettings.isZoomControlsEnabled = true
         googleMap.clear()
 
+        // Changing the color of the pins to match the Quinnipiac theme
         buildingViewModel.allBuildings.observe(viewLifecycleOwner) { buildings ->
             buildingCount = buildings.size
             updateBuildingCountText()
@@ -105,6 +110,7 @@ class HomeFragment : Fragment(R.layout.fragment_home), OnMapReadyCallback {
             }
         }
 
+        // Changing the color of the pins to match the Quinnipiac theme
         diningViewModel.allDinings.observe(viewLifecycleOwner) { dinings ->
             diningCount = dinings.size
             updateDiningCountText()
@@ -117,6 +123,7 @@ class HomeFragment : Fragment(R.layout.fragment_home), OnMapReadyCallback {
             }
         }
 
+        // Changing the color of the pins to match the Quinnipiac theme
         residenceViewModel.allResidences.observe(viewLifecycleOwner) { residences ->
             residenceCount = residences.size
             updateResidenceCountText()
@@ -130,24 +137,29 @@ class HomeFragment : Fragment(R.layout.fragment_home), OnMapReadyCallback {
         }
     }
 
+    // Updating the text based on how many favorites the user has for academic buildings
     private fun updateBuildingCountText() {
         val buildingGroupView = view?.findViewById<LinearLayout>(R.id.building_group)
         val buildingCountTextView = buildingGroupView?.findViewById<TextView>(R.id.building_count)
         buildingCountTextView?.text = buildingCount.toString()
     }
 
+    // Updating the text based on how many favorites the user has for dining halls
     private fun updateDiningCountText() {
         val diningGroupView = view?.findViewById<LinearLayout>(R.id.dining_group)
         val diningCountTextView = diningGroupView?.findViewById<TextView>(R.id.dining_count)
         diningCountTextView?.text = diningCount.toString()
     }
 
+    // Updating the text based on how many favorites the user has for residence halls/dorms
     private fun updateResidenceCountText() {
         val residenceGroupView = view?.findViewById<LinearLayout>(R.id.residence_group)
         val residenceCountTextView = residenceGroupView?.findViewById<TextView>(R.id.residence_count)
         residenceCountTextView?.text = residenceCount.toString()
     }
 
+    // Function that resets all of the map positions and settings
+    // This is useful if the user has moved the map around and wants the original position
     private fun resetMap() {
         val focusedLocation = LatLng(41.419223, -72.893990)
         val zoomLevel = 16f

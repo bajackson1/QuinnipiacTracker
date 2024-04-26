@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--This file creates the bottom navigation menu.-->
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <!--Home Button-->
@@ -18,7 +19,7 @@
         android:id="@+id/favsFragment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:icon="@drawable/ic_baseline_star_24"
+        android:icon="@drawable/baseline_favorite_24"
         android:title="@string/favs" />
     <!--Help Button-->
     <item

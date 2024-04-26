@@ -1,3 +1,7 @@
+/**
+ * This file holds the functionality for the Rat fragment.
+ * This includes the back and favorite button.
+ */
 package edu.quinnipiac.quinnipiactracker.buildings.dining
 
 import android.os.Bundle
@@ -21,6 +25,7 @@ class RatFragment : Fragment() {
     ): View? {
         val view = inflater.inflate(R.layout.fragment_rat, container, false)
 
+        // Get SharedViewModel to store in sharedViewModel
         sharedViewModel = ViewModelProvider(requireActivity())[SharedViewModel::class.java]
 
         // Setting back button

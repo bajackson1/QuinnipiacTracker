@@ -11,8 +11,9 @@ import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
 import edu.quinnipiac.quinnipiactracker.R
 
+// Adapter for building images
 class BuildingImageAdapter(
-    // List of images to be displayed
+    // List of building images to display
     private val buildingImages: List<Int>,
     // Click listeners for each building
     private val casClickListener: () -> Unit,
@@ -23,24 +24,24 @@ class BuildingImageAdapter(
     private val tatorClickListener: () -> Unit
 ) : RecyclerView.Adapter<BuildingImageAdapter.ViewHolder>() {
 
-    // Represents a singular image in the view gallery
+    // ViewHolder for building images
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val buildingImage: ImageView = itemView.findViewById(R.id.building_image)
     }
 
-    // Called when the adapter creates a new ViewHolder
-    // Inflates from the item_building_image.xml file
+    // Inflate the item_building_image layout and return a new ViewHolder
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context)
             .inflate(R.layout.item_building_image, parent, false)
         return ViewHolder(view)
     }
 
-    // Binding the image data to the view holder
+    // Bind the image data to the ViewHolder
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        // Set the building image resource
         holder.buildingImage.setImageResource(buildingImages[position])
 
-        // Setting the click listener for each image based on its position in the view
+        // Set the click listener for each image based on its position
         holder.buildingImage.setOnClickListener {
             when (position) {
                 0 -> casClickListener()
@@ -53,6 +54,6 @@ class BuildingImageAdapter(
         }
     }
 
-    // Returns the number of items in the view gallery
+    // Return the number of building images
     override fun getItemCount() = buildingImages.size
 }

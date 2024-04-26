@@ -1,3 +1,7 @@
+/**
+ * This fragment displays a list of dining locations.
+ * It allows the user to add new dining locations and delete existing ones.
+ */
 package edu.quinnipiac.quinnipiactracker.fragments.lists
 
 import android.os.Bundle
@@ -20,6 +24,7 @@ class DiningHomeFragment : Fragment(R.layout.fragment_dining_home) {
     private var _binding: FragmentDiningHomeBinding? = null
     private val binding get() = _binding!!
 
+    // List of dining locations
     private val dinings = mutableListOf<Dining>()
     private lateinit var diningAdapter: DiningAdapter
 
@@ -34,21 +39,26 @@ class DiningHomeFragment : Fragment(R.layout.fragment_dining_home) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        // Initialize dining adapter
         diningAdapter = DiningAdapter(dinings) { dining ->
+            // Delete dining location
             val viewModel = ViewModelProvider(this, DiningViewModelFactory(DiningRoomDatabase.getDatabase(requireContext()).diningDao()))[DiningViewModel::class.java]
             viewModel.deleteDining(dining)
         }
         binding.diningRecyclerView.adapter = diningAdapter
         binding.diningRecyclerView.layoutManager = LinearLayoutManager(requireContext())
 
+        // Add dining button click listener
         binding.addDiningFab.setOnClickListener {
             findNavController().navigate(R.id.action_diningHomeFragment_to_diningAddFragment)
         }
 
+        // Back button click listener
         binding.backButton.setOnClickListener {
             findNavController().navigate(R.id.action_diningHomeFragment_to_homeFragment)
         }
 
+        // Observe all dining locations and update the list
         val viewModel = ViewModelProvider(this, DiningViewModelFactory(DiningRoomDatabase.getDatabase(requireContext()).diningDao()))[DiningViewModel::class.java]
         viewModel.allDinings.observe(viewLifecycleOwner) { dinings ->
             this.dinings.clear()
@@ -58,7 +68,9 @@ class DiningHomeFragment : Fragment(R.layout.fragment_dining_home) {
         }
     }
 
+    // Update UI based on the list of dining locations
     private fun updateUI(dinings: List<Dining>) {
+        // Setting item visibility
         if (dinings.isNotEmpty()) {
             binding.logoImageView.visibility = View.GONE
             binding.logoTextView.visibility = View.GONE
