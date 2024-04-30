@@ -8,7 +8,7 @@ An Android app for information and location journaling at Quinnipiac University.
   <img src=".github/images/homeScreen.png" width="24.69%" height="24.69%">
   <img src=".github/images/infoScreen.png" width="24.69%" height="24.69%">
   <img src=".github/images/favsScreen.png" width="24.69%" height="24.69%">
-  <img src=".github/images/homeScreen.png" width="24.69%" height="24.69%">
+  <img src=".github/images/helpScreen.png" width="24.69%" height="24.69%">
 </div>
 
 > Home, Information, Favorites, and Help Screens
