@@ -46,6 +46,7 @@
     <string name="enter_a_building_name">Enter a building name</string>
     <string name="app_information">App Information</string>
     <string name="app_credits">App Credits</string>
+    <string name="qu_resources_label">Important Campus Resources</string>
     <string name="cancel">Cancel</string>
     <string name="delete_note">Delete Note</string>
     <string name="building_title">Building Title</string>
@@ -87,4 +88,16 @@
     <string name="_15_10_quot_x_11_4_quot">15\'10\" x 11\'4\"</string>
     <string name="_1_2_2_singles_1_double">1/2 (2 Singles, 1 Double)</string>
     <string name="_0">0</string>
+    <string name="creator_label">Creators: Cole Davignon (left) and Brooks Jackson (right)</string>
+    <string name="qu_resources">Important Phone Numbers\nPublic Safety: (203) 582-6200
+\nStudent Health Services: (203) 407-4050
+\nCounseling Center: (203) 407-4020
+\nOne Stop: (203) 582-8650
+\nLearning Commons: (203) 582-8628
+\nStudent Affairs: (203) 582-8753
+\nResidential Life: (203) 582-8666
+\nCentral Duty Mt. Carmel: (203) 582-8622
+</string>
+    <string name="creator_descriptions">Cole and Brooks are both Bachelor’s of Computer Science majors, while being in the 3+1 Cybersecurity Master’s program. They both have interests in Game Design, in which they both have classes together in the Game Design program.</string>
+    <string name="app_description">Our plan with this project is to make the QU experience more interactive and helpful.​ Our main goal of this project was to help incoming students understand our campus more​, since there can be some confusing parts. It is hard to soak it all in. We believed that if we had this app as incoming Bobcats, it would have answered so many questions for us, especially in the housing selection time period. Sometimes, we felt as if the upperclassmen dorms were foreign and we did not know which was which. We also believed this app could be helpful for international students interested, but cannot travel far. We believe that this app can change the way we see our campus, even without coming for a tour. We hoped to further expand this in the future, maybe adding York Hill information as well​! The Quinnipiac Tracker App can help so many people; incoming students, current students, staff, faculty, and even parents!</string>
 </resources>

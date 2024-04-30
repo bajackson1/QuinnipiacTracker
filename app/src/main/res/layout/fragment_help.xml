@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/white"
     android:gravity="center"
     android:orientation="vertical"
@@ -11,10 +12,61 @@
 
     <ImageView
         android:id="@+id/app_logo"
-        android:layout_width="300dp"
-        android:layout_height="300dp"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
         android:padding="16dp"
         android:src="@drawable/logo"
         tools:ignore="ContentDescription" />
+    <LinearLayout
+        android:id="@+id/app_info_icon"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/box_outline"
+        android:orientation="horizontal"
+        android:layout_marginBottom="4dp"
+        android:padding="16dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/app_information"
+            android:textColor="@color/QUnavy"
+            android:textSize="16sp"
+            android:textStyle="bold"/>
+
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/app_credits_icon"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/box_outline"
+        android:orientation="horizontal"
+        android:layout_marginBottom="4dp"
+        android:padding="16dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/app_credits"
+            android:textColor="@color/QUnavy"
+            android:textSize="16sp"
+            android:textStyle="bold"/>
+
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/qu_resources_icon"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/box_outline"
+        android:orientation="horizontal"
+        android:layout_marginBottom="4dp"
+        android:padding="16dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/qu_resources_label"
+            android:textColor="@color/QUnavy"
+            android:textSize="16sp"
+            android:textStyle="bold"/>
+
+    </LinearLayout>
 
 </LinearLayout>

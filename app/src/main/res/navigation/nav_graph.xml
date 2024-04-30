@@ -209,7 +209,18 @@ It is extremely long due to the number of screens for each building.-->
         android:id="@+id/helpFragment"
         android:name="edu.quinnipiac.quinnipiactracker.fragments.HelpFragment"
         android:label="fragment_help"
-        tools:layout="@layout/fragment_help" />
+        tools:layout="@layout/fragment_help" >
+        <action
+            android:id="@+id/action_helpFragment_to_appInfoFragment"
+            app:destination="@id/appInfoFragment"/>
+        <action
+            android:id="@+id/action_helpFragment_to_appCreditsFragment"
+            app:destination="@id/appCreditsFragment"/>
+        <action
+            android:id="@+id/action_helpFragment_to_quResourcesFragment"
+            app:destination="@id/quinniResourcesFragment"/>
+    </fragment>
+
 
     <!--CAS Info Screen-->
     <fragment
@@ -587,5 +598,20 @@ It is extremely long due to the number of screens for each building.-->
             android:id="@+id/action_troupFragment_to_favsFragment"
             app:destination="@id/favsFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/appCreditsFragment"
+        android:name="edu.quinnipiac.quinnipiactracker.AppCreditsFragment"
+        android:label="fragment_app_credits"
+        tools:layout="@layout/fragment_app_credits" />
+    <fragment
+        android:id="@+id/appInfoFragment"
+        android:name="edu.quinnipiac.quinnipiactracker.AppInfoFragment"
+        android:label="fragment_app_info"
+        tools:layout="@layout/fragment_app_info" />
+    <fragment
+        android:id="@+id/quinniResourcesFragment"
+        android:name="edu.quinnipiac.quinnipiactracker.QuinniResourcesFragment"
+        android:label="fragment_quinni_resources"
+        tools:layout="@layout/fragment_quinni_resources" />
 
 </navigation>

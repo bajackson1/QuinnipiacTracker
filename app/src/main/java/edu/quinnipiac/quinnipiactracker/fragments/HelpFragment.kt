@@ -9,6 +9,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import edu.quinnipiac.quinnipiactracker.R
 
 class HelpFragment : Fragment() {
@@ -16,6 +17,21 @@ class HelpFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_help, container, false)
+        val view = inflater.inflate(R.layout.fragment_help, container, false)
+
+        val navigateToAppInfo = view.findViewById<View>(R.id.app_info_icon)
+        navigateToAppInfo.setOnClickListener{
+            findNavController().navigate(R.id.action_helpFragment_to_appInfoFragment)
+        }
+        val navigateToAppCredits = view.findViewById<View>(R.id.app_credits_icon)
+        navigateToAppInfo.setOnClickListener{
+            findNavController().navigate(R.id.action_helpFragment_to_appCreditsFragment)
+        }
+        val navigateToQUResources = view.findViewById<View>(R.id.qu_resources_icon)
+        navigateToAppInfo.setOnClickListener{
+            findNavController().navigate(R.id.action_helpFragment_to_quResourcesFragment)
+        }
+
+        return view
     }
 }
