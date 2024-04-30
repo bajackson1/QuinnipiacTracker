@@ -12,7 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="12dp"
         android:background="?attr/selectableItemBackground"
         android:contentDescription="@string/back"
         android:src="@drawable/ic_baseline_back_24"
@@ -24,7 +24,9 @@
         android:layout_marginTop="100dp"
         android:layout_width="400dp"
         android:layout_height="200dp"
-        android:padding="16dp"
+        android:padding="8dp"
+        android:layout_marginBottom="-8dp"
+        android:layout_gravity="center"
         android:src="@drawable/cole_and_brooks"
         tools:ignore="ContentDescription"/>
 
@@ -34,14 +36,15 @@
         android:layout_height="wrap_content"
         android:background="@drawable/box_outline"
         android:orientation="horizontal"
-        android:padding="16dp">
+        android:padding="16dp"
+        android:layout_margin="4dp">
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/creator_label"
             android:textColor="@color/QUnavy"
             android:textSize="16sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"/>
     </LinearLayout>
     <LinearLayout
         android:id="@+id/app_credits_description"
@@ -49,7 +52,8 @@
         android:layout_height="wrap_content"
         android:background="@drawable/box_outline"
         android:orientation="horizontal"
-        android:padding="16dp">
+        android:padding="16dp"
+        android:layout_margin="4dp">
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
