@@ -33,6 +33,7 @@
             android:textStyle="bold"/>
 
     </LinearLayout>
+
     <LinearLayout
         android:id="@+id/app_credits_icon"
         android:layout_width="match_parent"
@@ -50,6 +51,7 @@
             android:textStyle="bold"/>
 
     </LinearLayout>
+
     <LinearLayout
         android:id="@+id/qu_resources_icon"
         android:layout_width="match_parent"

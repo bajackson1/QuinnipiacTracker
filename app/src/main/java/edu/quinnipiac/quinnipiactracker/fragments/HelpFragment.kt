@@ -20,15 +20,17 @@ class HelpFragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_help, container, false)
 
         val navigateToAppInfo = view.findViewById<View>(R.id.app_info_icon)
-        navigateToAppInfo.setOnClickListener{
+        navigateToAppInfo.setOnClickListener {
             findNavController().navigate(R.id.action_helpFragment_to_appInfoFragment)
         }
+
         val navigateToAppCredits = view.findViewById<View>(R.id.app_credits_icon)
-        navigateToAppInfo.setOnClickListener{
+        navigateToAppCredits.setOnClickListener {
             findNavController().navigate(R.id.action_helpFragment_to_appCreditsFragment)
         }
+
         val navigateToQUResources = view.findViewById<View>(R.id.qu_resources_icon)
-        navigateToAppInfo.setOnClickListener{
+        navigateToQUResources.setOnClickListener {
             findNavController().navigate(R.id.action_helpFragment_to_quResourcesFragment)
         }
 

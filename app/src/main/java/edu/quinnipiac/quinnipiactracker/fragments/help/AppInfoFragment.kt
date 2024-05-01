@@ -1,12 +1,13 @@
-package edu.quinnipiac.quinnipiactracker
+package edu.quinnipiac.quinnipiactracker.fragments.help
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
+import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import edu.quinnipiac.quinnipiactracker.R
 
 class AppInfoFragment : Fragment() {
 
@@ -15,7 +16,7 @@ class AppInfoFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        val view = inflater.inflate(R.layout.fragment_app_credits, container, false)
+        val view = inflater.inflate(R.layout.fragment_app_info, container, false)
 
         val backButton = view.findViewById<ImageButton>(R.id.back_button)
         backButton.setOnClickListener {

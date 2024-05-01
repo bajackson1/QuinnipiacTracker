@@ -598,20 +598,41 @@ It is extremely long due to the number of screens for each building.-->
             android:id="@+id/action_troupFragment_to_favsFragment"
             app:destination="@id/favsFragment" />
     </fragment>
+
+    <!--App Credits Fragment-->
     <fragment
         android:id="@+id/appCreditsFragment"
-        android:name="edu.quinnipiac.quinnipiactracker.AppCreditsFragment"
+        android:name="edu.quinnipiac.quinnipiactracker.fragments.help.AppCreditsFragment"
         android:label="fragment_app_credits"
-        tools:layout="@layout/fragment_app_credits" />
+        tools:layout="@layout/fragment_app_credits" >
+        <!--Navigate to the help screen-->
+        <action
+            android:id="@+id/action_appCreditsFragment_to_helpFragment"
+            app:destination="@id/helpFragment" />
+    </fragment>
+
+    <!--App Information Fragment-->
     <fragment
         android:id="@+id/appInfoFragment"
-        android:name="edu.quinnipiac.quinnipiactracker.AppInfoFragment"
+        android:name="edu.quinnipiac.quinnipiactracker.fragments.help.AppInfoFragment"
         android:label="fragment_app_info"
-        tools:layout="@layout/fragment_app_info" />
+        tools:layout="@layout/fragment_app_info" >
+        <!--Navigate to the help screen-->
+        <action
+            android:id="@+id/action_appInfoFragment_to_helpFragment"
+            app:destination="@id/helpFragment" />
+    </fragment>
+
+    <!--Resources Fragment-->
     <fragment
         android:id="@+id/quinniResourcesFragment"
-        android:name="edu.quinnipiac.quinnipiactracker.QuinniResourcesFragment"
+        android:name="edu.quinnipiac.quinnipiactracker.fragments.help.QuinniResourcesFragment"
         android:label="fragment_quinni_resources"
-        tools:layout="@layout/fragment_quinni_resources" />
+        tools:layout="@layout/fragment_quinni_resources" >
+        <!--Navigate to the help screen-->
+        <action
+            android:id="@+id/action_quinniResourcesFragment_to_helpFragment"
+            app:destination="@id/helpFragment" />
+    </fragment>
 
 </navigation>
