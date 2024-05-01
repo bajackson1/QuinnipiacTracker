@@ -63,7 +63,7 @@
             android:layout_marginEnd="4dp"
             android:background="@drawable/box_outline"
             android:padding="16dp"
-            android:text="@string/todo"
+            android:text="@string/perl_description"
             android:textColor="@color/QUnavy"
             android:textSize="16sp"
             android:textStyle="bold"
