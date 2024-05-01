@@ -2,13 +2,13 @@
 <project version="4">
   <component name="deploymentTargetDropDown">
     <value>
-      <entry key="ExampleInstrumentedTest">
+      <entry key="BuildingAddInstrumentedTest">
+        <State />
+      </entry>
+      <entry key="DatabaseInstrumentedTest">
         <State />
       </entry>
       <entry key="app">
-        <State />
-      </entry>
-      <entry key="daoInsert_insertsItemIntoDB()">
         <State />
       </entry>
     </value>

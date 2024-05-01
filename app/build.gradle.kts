@@ -67,6 +67,7 @@ dependencies {
     implementation("androidx.test:core-ktx:1.5.0")
     implementation("androidx.test.ext:junit-ktx:1.1.5")
     implementation("androidx.test:runner:1.5.2")
+    implementation("androidx.navigation:navigation-testing:2.7.7")
     androidTestImplementation("androidx.test:rules:1.5.0")
     debugImplementation("androidx.compose.ui:ui-tooling")
     debugImplementation("androidx.compose.ui:ui-test-manifest")
@@ -97,6 +98,7 @@ dependencies {
     testImplementation("junit:junit:4.13.2")
     testImplementation("org.mockito:mockito-core:4.8.0")
     testImplementation("org.mockito:mockito-inline:4.8.0")
+    debugImplementation("androidx.fragment:fragment-testing:1.6.2")
 
     // Glide
     implementation("com.github.bumptech.glide:glide:4.14.2")

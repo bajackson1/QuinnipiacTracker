@@ -24,7 +24,7 @@ import java.io.IOException
  * See [testing documentation](http://d.android.com/tools/testing).
  */
 @RunWith(AndroidJUnit4::class)
-class ExampleInstrumentedTest {
+class DatabaseInstrumentedTest {
     private lateinit var buildingDao: BuildingDao
     private lateinit var buildingRoomDatabase: BuildingRoomDatabase
     private var building1 = Building(1, "Echlin Center", 41.4183663748876, -72.89706751864954)
