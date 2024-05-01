@@ -15,9 +15,9 @@ An Android app for information and location journaling at Quinnipiac University.
 
 ## Getting Started
 
-### Android App Store
+### Android APK
 
-Upon the final updates to the first version of the app, we will be publishing QuinnipiacTracker to the Android App Store. Stay tuned for updates!
+[coming soon]
 
 ### Source Code
 
