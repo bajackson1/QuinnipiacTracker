@@ -17,7 +17,7 @@ An Android app for information and location journaling at Quinnipiac University.
 
 ### Android APK
 
-[coming soon]
+In the [releases](https://github.com/bajackson1/QuinnipiacTracker/releases/tag/release-1.0.0) tab you can find two zip files: one for source code and one for the APK. You can download the `quinnipiac-tracker.zip` compressed file to get the APK file and run it on any Android physical device or emulator.
 
 ### Source Code
 
